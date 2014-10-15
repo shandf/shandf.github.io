@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Windows 下交换 Caps 键与 Ctrl 键 - Danfeng Shan</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/dfshan_blog/theme/static/css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href="/dfshan_blog">Home</a></li>
+                    <li><a href="/dfshan_blog/archives.html">Archives</a></li>
+                </ul>
+                <h3 class="text-muted"><a href="/dfshan_blog">Danfeng Shan</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="/dfshan_blog/windows-xia-jiao-huan-caps-jian-yu-ctrl-jian.html" rel="bookmark"
+         title="Permalink to Windows 下交换 Caps 键与 Ctrl 键">Windows 下交换 Caps 键与 Ctrl 键</a></h2>
+ 
+  </header>
+  
+     
+  <div class="entry-content">
+    <div class="section" id="id1">
+<h2>打开注册表编辑器</h2>
+<p><tt class="docutils literal">win + R</tt> 打开运行，输入 <tt class="docutils literal">regedit</tt></p>
+</div>
+<div class="section" id="id2">
+<h2>找到目标文件夹</h2>
+<p><tt class="docutils literal">HKEY_LOCAL_MACHINE <span class="pre">-&gt;</span> System <span class="pre">-&gt;</span> CurrentControlSet <span class="pre">-&gt;</span> Control <span class="pre">-&gt;</span> KeyBoard Layout</tt></p>
+</div>
+<div class="section" id="id3">
+<h2>新建注册表项</h2>
+<p>右击该文件夹，点击 <tt class="docutils literal">新建 <span class="pre">-&gt;</span> 二进制值</tt>, 修改注册表项的名字为 <tt class="docutils literal">Scancode Map</tt>,
+然后右击该注册表项，点击 <tt class="docutils literal">修改二进制数据</tt>, 手动输入如下数据:</p>
+<pre class="literal-block">
+0000 00 00 00 00 00 00 00 00
+0008 03 00 00 00 3A 00 1D 00
+0010 1D 00 3A 00 00 00 00 00
+0018
+</pre>
+<p>其中, <tt class="docutils literal">3A 00 1D 00</tt> 表示将 <tt class="docutils literal">Ctrl</tt> 键映射为 <tt class="docutils literal">Caps</tt> 键
+重启
+-----</p>
+</div>
+
+  </div><!-- /.entry-content -->
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2014-09-23T11:06:00">
+      Tue 23 September 2014
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="/dfshan_blog/author/danfeng-shan.html">Danfeng Shan</a>
+    </address> in <a href="/dfshan_blog/category/experience.html">eXperience</a> Tagged <a href="/dfshan_blog/tag/windows.html">Windows </a>  </footer><!-- /.post-info -->
+</section>
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="/dfshan_blog/None">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="/dfshan_blog">Danfeng Shan</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>openSUSE 下 Latex 中文解决方案 - Danfeng Shan</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/dfshan_blog/theme/static/css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href="/dfshan_blog">Home</a></li>
+                    <li><a href="/dfshan_blog/archives.html">Archives</a></li>
+                </ul>
+                <h3 class="text-muted"><a href="/dfshan_blog">Danfeng Shan</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="/dfshan_blog/opensuse-xia-latex-zhong-wen-jie-jue-fang-an.html" rel="bookmark"
+         title="Permalink to openSUSE 下 Latex 中文解决方案">openSUSE 下 Latex 中文解决方案</a></h2>
+ 
+  </header>
+  
+     
+  <div class="entry-content">
+    <p>在 Linux 下使用 Latex 编译中文文档时，经常出现字体无法找到的命令，
+因此按照如下步骤来解决 Latex 的中文字体配置。</p>
+<div class="section" id="texlive">
+<h2>安装 texlive</h2>
+<pre class="literal-block">
+sudo zypper in texlive
+</pre>
+<p>检查是否已经安装 &quot;texlive-ctex&quot; &quot;texlive-xecjk&quot; &quot;texlive-xetex&quot; （一般是默认安装的）</p>
+</div>
+<div class="section" id="id1">
+<h2>配置中文字体</h2>
+<p>在配置中文字体之前，首先要确认 texlive 的 “termf” 文件夹的安装位置，为 <tt class="docutils literal">/usr/share/texmf/</tt>
+如果是通过 texlive 提供的安装盘安装的，则该文件夹的位置为 <tt class="docutils literal"><span class="pre">/usr/local/texlive/2014/texmf-dist</span></tt></p>
+<p>然后，进入目录 <tt class="docutils literal">/usr/share/texmf/tex/latex/ctex/fontset/</tt> 并创建文件 <tt class="docutils literal"><span class="pre">ctex-xecjk-unixfonts.def</span></tt> , 填入以下内容:</p>
+<pre class="literal-block">
+% ctex-xecjk-unixfonts.def: Unix 的 xeCJK 字体设置
+% vim:ft=tex
+\setCJKmainfont[BoldFont={WenQuanYi Zen Hei},ItalicFont={AR PL UKai CN}]{AR PL SungtiL GB}
+\setCJKsansfont{WenQuanYi Zen Hei}
+\setCJKmonofont{AR PL UMing CN}
+\setCJKfamilyfont{zhsong}{AR PL SungtiL GB}
+\setCJKfamilyfont{zhhei}{WenQuanYi Zen Hei}
+\setCJKfamilyfont{zhkai}{AR PL KaitiM GB}
+\setCJKfamilyfont{zhfs}{AR PL UMing CN}
+\setCJKfamilyfont{zhli}{WenQuanYi Zen Hei Mono}
+\setCJKfamilyfont{zhyou}{AR PL SungtiL GB}
+\setCJKfamilyfont{wqy}{WenQuanYi Zen Hei}
+\setCJKfamilyfont{uming}{AR PL UMing CN}
+\setCJKfamilyfont{ukai}{AR PL UKai CN}
+\setCJKfamilyfont{kaitim}{AR PL KaitiM GB}
+\setCJKfamilyfont{sungtil}{AR PL SungtiL GB}
+\newcommand*{\wqy}{\CJKfamily{wqy}} % 文泉驿正黑
+\newcommand*{\uming}{\CJKfamily{uming}}
+% AR PL UMing CN
+\newcommand*{\ukai}{\CJKfamily{ukai}}
+% AR PL UKai CN
+\newcommand*{\kaitim}{\CJKfamily{kaitim}}
+% 文鼎PL简中楷
+\newcommand*{\sungtil}{\CJKfamily{sungtil}} % 文鼎PL简报宋
+\newcommand*{\songti}{\CJKfamily{zhsong}} % 宋体
+\newcommand*{\heiti}{\CJKfamily{zhhei}}
+% 黑体
+\newcommand*{\kaishu}{\CJKfamily{zhkai}}
+% 楷书
+\newcommand*{\fangsong}{\CJKfamily{zhfs}} % 仿宋
+\newcommand*{\lishu}{\CJKfamily{zhli}}
+% 隶书
+\newcommand*{\youyuan}{\CJKfamily{zhyou}} % 幼圆
+\endinput
+</pre>
+<p>简单的说明一下：这里用 ”文鼎PL简报宋” 替换 “宋体”, 用 “文泉驿正黑” 替换 “黑体”, 用 “文鼎PL简中楷” 替换 “楷体” 等等,
+还把这些字体定义为新的命令,例如: {wqy 文泉驿正黑} 就可以用来显示文泉驿正黑字体。也可以使用免费的方正字体。
+<strong>这里要注意的是，在进行字体配置时，要明确一下系统中是否存在这些字体</strong> ，查看系统字体的方法为:</p>
+<pre class="literal-block">
+fc-list :lang=zh-cn
+</pre>
+<p>如果系统中没有所需的字体，需下载安装之后才能使用。
+然后修改文件 <tt class="docutils literal"><span class="pre">/usr/share/texmf/tex/latex/ctex/opt/ctex-common-opts.def</span></tt> (注意权限),
+把其中的:</p>
+<pre class="literal-block">
+% fonts
+\newif\ifCTEX&#64;nofonts \CTEX&#64;nofontsfalse
+\newif\ifCTEX&#64;winfonts \CTEX&#64;winfontstrue
+\newif\ifCTEX&#64;adobefonts \CTEX&#64;adobefontsfalse
+\DeclareOption{nofonts}{\CTEX&#64;nofontstrue
+\CTEX&#64;winfontsfalse
+\CTEX&#64;adobefontsfalse}
+\DeclareOption{winfonts}{\CTEX&#64;winfontstrue
+\CTEX&#64;nofontsfalse
+\CTEX&#64;adobefontsfalse}
+\DeclareOption{adobefonts}{\CTEX&#64;adobefontstrue
+\CTEX&#64;nofontsfalse
+\CTEX&#64;winfontsfalse}
+</pre>
+<p>修改为:</p>
+<pre class="literal-block">
+% fonts
+\newif\ifCTEX&#64;nofonts \CTEX&#64;nofontsfalse
+\newif\ifCTEX&#64;winfonts \CTEX&#64;winfontstrue
+\newif\ifCTEX&#64;adobefonts \CTEX&#64;adobefontsfalse
+\newif\ifCTEX&#64;unixfonts \CTEX&#64;unixfontsfalse
+\DeclareOption{nofonts}{\CTEX&#64;nofontstrue
+\CTEX&#64;winfontsfalse
+\CTEX&#64;adobefontsfalse
+\CTEX&#64;unixfontsfalse}
+\DeclareOption{winfonts}{\CTEX&#64;winfontstrue
+\CTEX&#64;nofontsfalse
+\CTEX&#64;adobefontsfalse
+\CTEX&#64;unixfontsfalse}
+\DeclareOption{adobefonts}{\CTEX&#64;adobefontstrue
+\CTEX&#64;nofontsfalse
+\CTEX&#64;winfontsfalse
+\CTEX&#64;unixfontsfalse}
+\DeclareOption{unixfonts}{\CTEX&#64;unixfontstrue
+\CTEX&#64;nofontsfalse
+\CTEX&#64;winfontsfalse
+\CTEX&#64;adobefontsfalse}
+</pre>
+<p>接下来修改 <tt class="docutils literal"><span class="pre">/usr/share/texmf/tex/latex/ctex/engine/ctex-xecjk-engine.def</span></tt>, 把其中的:</p>
+<pre class="literal-block">
+\ifCTEX&#64;nofonts\else
+\ifCTEX&#64;winfonts
+\input{ctex-xecjk-winfonts.def}
+\else\ifCTEX&#64;adobefonts
+\input{ctex-xecjk-adobefonts.def}
+\fi\fi
+\fi
+</pre>
+<p>修改为:</p>
+<pre class="literal-block">
+       \begin{verbatim}
+       \ifCTEX&#64;nofonts\else
+       \ifCTEX&#64;winfonts
+       \input{ctex-xecjk-winfonts.def}
+       \else\ifCTEX&#64;adobefonts
+       \input{ctex-xecjk-adobefonts.def}
+       \else\ifCTEX&#64;unixfonts
+       \input{ctex-xecjk-unixfonts.def}
+       \fi\fi\fi
+       \fi
+
+最后，把 ctex 默认字体集改为 unixfonts：其实在上面一步的时候也可以修改，不过还是这样改把，
+添加文件 ``/usr/share/texmf/tex/latex/ctex/cfg/ctexopts.cfg``, 内容是::
+
+       % ctexopts.cfg.template: set default options
+       % vim:ft=tex
+       \ExecuteOptions{unixfonts}
+       \endinput
+</pre>
+<p>更新 texlsr，即命令输入:</p>
+<pre class="literal-block">
+sudo mktexlsr
+</pre>
+</div>
+<div class="section" id="latex">
+<h2>使用 Latex 编写中文</h2>
+<p>在编写时，需要使用 ctex 宏包:</p>
+<pre class="literal-block">
+\usepackage{ctex}
+</pre>
+<p>还有两点需要注意：</p>
+<blockquote>
+<ul class="simple">
+<li>要采用 XeCJK 对 Latex 源码进行编译，而不是 pdfLatex 或者 Latex，编译之后直接输出 pdf 文件</li>
+<li>源文件编码方式为 utf-8，否则会出现乱码现象</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="id2">
+<h2>参考文献</h2>
+<p><a class="reference external" href="http://forum.ubuntu.org.cn/download/file.php?id=100220&amp;sid=7e476fa476d6e5bc0f6a2a147bfa316c">Texlive 2009 安装手记</a></p>
+</div>
+
+  </div><!-- /.entry-content -->
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2014-09-17T19:10:00">
+      Wed 17 September 2014
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="/dfshan_blog/author/danfeng-shan.html">Danfeng Shan</a>
+    </address> in <a href="/dfshan_blog/category/linux.html">Linux</a> Tagged <a href="/dfshan_blog/tag/opensuse.html">openSUSE </a><a href="/dfshan_blog/tag/linux.html">Linux </a>  </footer><!-- /.post-info -->
+</section>
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="/dfshan_blog/None">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="/dfshan_blog">Danfeng Shan</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>

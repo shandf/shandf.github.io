@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Danfeng Shan</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/dfshan_blog/theme/static/css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class="active"><a href="/dfshan_blog">Home</a></li>
+                    <li><a href="/dfshan_blog/archives.html">Archives</a></li>
+                </ul>
+                <h3 class="text-muted"><a href="/dfshan_blog">Danfeng Shan</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="content">
+
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/dfshan_blog/opensuse-xia-latex-zhong-wen-jie-jue-fang-an.html" rel="bookmark" title="Permalink to openSUSE 下 Latex 中文解决方案">openSUSE 下 Latex 中文解决方案</a></h2> </header>
+                <div class="entry-content"> <p>在 Linux 下使用 Latex 编译中文文档时，经常出现字体无法找到的命令，
+因此按照如下步骤来解决 Latex 的中文字体配置。</p>
+<div class="section" id="texlive">
+<h2>安装 texlive</h2>
+<pre class="literal-block">
+sudo zypper in texlive
+</pre>
+<p>检查是否已经安装 &quot;texlive-ctex&quot; &quot;texlive-xecjk&quot; &quot;texlive-xetex&quot; （一般是默认安装的）</p>
+</div>
+<div class="section" id="id1">
+<h2>配置中文字体</h2>
+<p>在配置中文字体之前，首先要确认 texlive 的 “termf” 文件夹的安装位置，为 <tt class="docutils literal">/usr/share/texmf/</tt>
+如果是通过 texlive 提供的安装盘安装的，则该文件夹的位置为 <tt class="docutils literal"><span class="pre">/usr/local/texlive/2014/texmf-dist</span></tt></p>
+<p>然后，进入目录 <tt class="docutils literal">/usr/share/texmf/tex/latex/ctex/fontset/</tt> 并创建文件 ...</p></div> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/dfshan_blog/ru-he-an-zhuang-fcitx.html" rel="bookmark" title="Permalink to 如何安装 fcitx">如何安装 fcitx</a></h2> </header>
+                <div class="entry-content"> <p>以ubuntu为例，说明安装企鹅输入法的步骤
+首先，要先卸载 ibus:</p>
+<pre class="literal-block">
+sudo apt-get remove ibus
+</pre>
+<p>然后，通过 &quot;apt-get&quot; 命令，安装企鹅输入法以及谷歌拼音:</p>
+<pre class="literal-block">
+sudo apt-get install fcitx fcitx-googlepinyin
+</pre>
+<p>安装完之后，在终端下可能还不能切换，因此，要修改终端的 .bashrc 文件，向其添加如下内容:</p>
+<pre class="literal-block">
+export GTK_IM_MODULE=xim
+export QT_IM_MODULE=xim
+export XMODIFIERS=&quot;&#64;im=fcitx&quot;
+</pre>
+ </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/dfshan_blog/how-to-change-the-web-port-of-gitlab.html" rel="bookmark" title="Permalink to How to Change the Web Port of GitLab">How to Change the Web Port of GitLab</a></h2> </header>
+                <div class="entry-content"> <div class="section" id="step-1-gitlab-shell">
+<h2>Step 1: GitLab Shell</h2>
+<p>Change the GitLab Shell config file: <cite>/home/git/gitlab-shell/config.yml</cite>:</p>
+<pre class="literal-block">
+gitlab_url: &quot;http://***.***.***.***:83/&quot;
+</pre>
+</div>
+<div class="section" id="step-2-gitlab">
+<h2>Step 2: GitLab</h2>
+<p>Change the GitLab config file: <cite>/home/git/gitlab/config/gitlab.yml</cite>:</p>
+<pre class="literal-block">
+host: ***.***.***.***
+port: 83
+</pre>
+</div>
+<div class="section" id="step-3-ngnix">
+<h2>Step 3: ngnix</h2>
+<p>Change the nginx config file: ` /etc/nginx/sites-available/gitlab`:</p>
+<pre class="literal-block">
+listen *:83 default_server;
+</pre>
+</div>
+ </div><!-- entry-content -->
+        </article>
+<div class="pager">
+      <ul>
+						<li class="previous"><a href="/dfshan_blog/index.html">← Previous</a></li>
+                        <li class="next disabled"><a>Next →</a></li>
+      </ul>
+    </div>
+</section><!-- content -->
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="/dfshan_blog/None">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="/dfshan_blog">Danfeng Shan</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>

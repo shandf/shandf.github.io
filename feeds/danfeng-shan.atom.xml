@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Danfeng Shan</title><link href="/dfshan_blog/" rel="alternate"></link><link href="/dfshan_blog/feeds/danfeng-shan.atom.xml" rel="self"></link><id>/dfshan_blog/</id><updated>2020-01-01T00:00:00+08:00</updated><entry><title>Welcome!</title><link href="/dfshan_blog/welcome.html" rel="alternate"></link><updated>2020-01-01T00:00:00+08:00</updated><author><name>Danfeng Shan</name></author><id>tag:,2020-01-01:dfshan_blog/welcome.html</id><summary type="html">&lt;p&gt;Welcome to my site!&lt;/p&gt;
+&lt;!-- :save_as: index.html --&gt;
+&lt;embed&gt;&lt;script type="text/javascript" src="//rd.revolvermaps.com/0/0/6.js?i=35qwtxu8jzj&amp;amp;m=7&amp;amp;s=320&amp;amp;c=e63100&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=0&amp;amp;bv=90&amp;amp;lx=-420&amp;amp;ly=420&amp;amp;hi=20&amp;amp;he=7&amp;amp;hc=a8ddff&amp;amp;rs=80" async="async"&gt;&lt;/script&gt;&lt;/embed&gt;</summary></entry><entry><title>Windows 下交换 Caps 键与 Ctrl 键</title><link href="/dfshan_blog/windows-xia-jiao-huan-caps-jian-yu-ctrl-jian.html" rel="alternate"></link><updated>2014-09-23T11:06:00+08:00</updated><author><name>Danfeng Shan</name></author><id>tag:,2014-09-23:dfshan_blog/windows-xia-jiao-huan-caps-jian-yu-ctrl-jian.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;打开注册表编辑器&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;win + R&lt;/tt&gt; 打开运行，输入 &lt;tt class="docutils literal"&gt;regedit&lt;/tt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;找到目标文件夹&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;HKEY_LOCAL_MACHINE &lt;span class="pre"&gt;-&amp;gt;&lt;/span&gt; System &lt;span class="pre"&gt;-&amp;gt;&lt;/span&gt; CurrentControlSet &lt;span class="pre"&gt;-&amp;gt;&lt;/span&gt; Control &lt;span class="pre"&gt;-&amp;gt;&lt;/span&gt; KeyBoard Layout&lt;/tt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;新建注册表项&lt;/h2&gt;
+&lt;p&gt;右击该文件夹，点击 &lt;tt class="docutils literal"&gt;新建 &lt;span class="pre"&gt;-&amp;gt;&lt;/span&gt; 二进制值&lt;/tt&gt;, 修改注册表项的名字为 &lt;tt class="docutils literal"&gt;Scancode Map&lt;/tt&gt;,
+然后右击该注册表项，点击 &lt;tt class="docutils literal"&gt;修改二进制数据&lt;/tt&gt;, 手动输入如下数据:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+0000 00 00 00 00 00 00 00 00
+0008 03 00 00 00 3A 00 1D 00
+0010 1D 00 3A 00 00 00 00 00
+0018
+&lt;/pre&gt;
+&lt;p&gt;其中, &lt;tt class="docutils literal"&gt;3A 00 1D 00&lt;/tt&gt; 表示将 &lt;tt class="docutils literal"&gt;Ctrl&lt;/tt&gt; 键映射为 &lt;tt class="docutils literal"&gt;Caps&lt;/tt&gt; 键
+重启
+-----&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="Windows"></category></entry><entry><title>Additional List</title><link href="/dfshan_blog/additional-list.html" rel="alternate"></link><updated>2014-09-21T11:20:00+08:00</updated><author><name>Danfeng Shan</name></author><id>tag:,2014-09-21:dfshan_blog/additional-list.html</id><summary type="html">&lt;p&gt;我说最近下论文怎么变得这么慢...........................了，原来是这几个网址 &amp;quot;搞的鬼&amp;quot;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+staticieeexplore.ieee.org
+portalparts.acm.org
+delivery.acm.org
+&lt;/pre&gt;
+&lt;p&gt;另外，经常出现个人主页打开很慢的情形，这是由这个网址 &amp;quot;搞的鬼&amp;quot;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+googleapis.com
+&lt;/pre&gt;
+</summary></entry><entry><title>Linux(KDE) 下字体的设置</title><link href="/dfshan_blog/linuxkde-xia-zi-ti-de-she-zhi.html" rel="alternate"></link><updated>2014-09-17T19:10:00+08:00</updated><author><name>Danfeng Shan</name></author><id>tag:,2014-09-17:dfshan_blog/linuxkde-xia-zi-ti-de-she-zhi.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Sans-serif=无衬线体=黑体&lt;/strong&gt;：并不是具体一款字体，而是一类字体，选择它其实等于选择这类字体中优先级最高的那款字体。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Serif=衬线体=白体&lt;/strong&gt;：同上&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Monospace=等宽字体&lt;/strong&gt;，意思是字符宽度相同：同上&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;点阵字体=位图字体&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;无衬线体更适合电脑屏幕阅读，衬线体适合打印。因为衬线可以使得人视线平齐于一行。也就是说不会读破行。&lt;/p&gt;
+&lt;p&gt;中文显示时有不同的方式，一方面因为中文本身拥有的横和同高度就可以导致这种平齐。行距对中文更重要。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;修改字体的优先级：&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+/etc/fonts/fonts.conf #系统配置文件，需要root权限才能操作，对需要输入root密码的程序有效
+~/.config/fontconfig/fonts.conf #用户配置文件，随便怎么搞，只对当前用户运行的程序有效
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;字体安装：&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+sudo mkdir -p /usr/share/fonts/win # 新建文件夹
+sudo cp Yahei.ttf /usr/share/fonts/win/ # 复制字体文件
+sudo chmod 644 /usr/share/fonts/win/*.ttf # 修改权限
+cd /usr/share/fonts/win/
+# 安装字体
+sudo mkfontscale
+sudo mkfontdir
+sudo fc-cache -fv
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;常用命令：&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+fc-cache -fv #通常复制字体进~/.fonts就会自动刷新字体，如果没有，用这个命令，如果复制进的是/usr/share/fonts/，用sudo fc-cache -fv
+fc-match sans-serif #抓取当前用户sans-serif类字体优先级最高的那款字体
+fc-match serif #抓取当前用户serif类字体优先级最高的那款字体
+fc-match monospace #抓取当前用户monospace类字体优先级最高的那款字体
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;参考文献：&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+[1] http://wiki.ubuntu.com.cn/%E5%AD%97%E4%BD%93
+[2] http://os.51cto.com/art/201004/192461.htm
+&lt;/pre&gt;
+&lt;/div&gt;
+</summary><category term="openSUSE"></category><category term="Linux"></category></entry><entry><title>openSUSE 安装 VirtualBox 虚拟机</title><link href="/dfshan_blog/opensuse-an-zhuang-virtualbox-xu-ni-ji.html" rel="alternate"></link><updated>2014-09-17T19:10:00+08:00</updated><author><name>Danfeng Shan</name></author><id>tag:,2014-09-17:dfshan_blog/opensuse-an-zhuang-virtualbox-xu-ni-ji.html</id><summary type="html">&lt;p&gt;使用 &lt;tt class="docutils literal"&gt;sudo zypper in virtualbox&lt;/tt&gt; 之后出现问题，提示运行命令 &lt;tt class="docutils literal"&gt;/etc/init.d/vboxdrv setup&lt;/tt&gt; 安装内核模块，可是输入命令之后产生如下输出:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Recompiling VirtualBox kernel module, NOT. It has been packaged.
+&lt;/pre&gt;
+&lt;p&gt;阅读 &lt;tt class="docutils literal"&gt;/etc/ini.d/vboxdrv&lt;/tt&gt; 内容之后，发现 setup 函数只做一件事：输出上面的内容。所以，可以肯定，应该是安装时出现的问题。
+卸载所有与 virtualbox 相关的包，并安装内核源码 &amp;quot;kernel-desktop-devel&amp;quot;，下载 virtualbox 官网上的 rpm 包，安装，成功解决问题。&lt;/p&gt;
+</summary><category term="GitLab"></category><category term="openSUSE"></category></entry><entry><title>openSUSE 下 Latex 中文解决方案</title><link href="/dfshan_blog/opensuse-xia-latex-zhong-wen-jie-jue-fang-an.html" rel="alternate"></link><updated>2014-09-17T19:10:00+08:00</updated><author><name>Danfeng Shan</name></author><id>tag:,2014-09-17:dfshan_blog/opensuse-xia-latex-zhong-wen-jie-jue-fang-an.html</id><summary type="html">&lt;p&gt;在 Linux 下使用 Latex 编译中文文档时，经常出现字体无法找到的命令，
+因此按照如下步骤来解决 Latex 的中文字体配置。&lt;/p&gt;
+&lt;div class="section" id="texlive"&gt;
+&lt;h2&gt;安装 texlive&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+sudo zypper in texlive
+&lt;/pre&gt;
+&lt;p&gt;检查是否已经安装 &amp;quot;texlive-ctex&amp;quot; &amp;quot;texlive-xecjk&amp;quot; &amp;quot;texlive-xetex&amp;quot; （一般是默认安装的）&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;配置中文字体&lt;/h2&gt;
+&lt;p&gt;在配置中文字体之前，首先要确认 texlive 的 “termf” 文件夹的安装位置，为 &lt;tt class="docutils literal"&gt;/usr/share/texmf/&lt;/tt&gt;
+如果是通过 texlive 提供的安装盘安装的，则该文件夹的位置为 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/usr/local/texlive/2014/texmf-dist&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;然后，进入目录 &lt;tt class="docutils literal"&gt;/usr/share/texmf/tex/latex/ctex/fontset/&lt;/tt&gt; 并创建文件 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;ctex-xecjk-unixfonts.def&lt;/span&gt;&lt;/tt&gt; , 填入以下内容:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+% ctex-xecjk-unixfonts.def: Unix 的 xeCJK 字体设置
+% vim:ft=tex
+\setCJKmainfont[BoldFont={WenQuanYi Zen Hei},ItalicFont={AR PL UKai CN}]{AR PL SungtiL GB}
+\setCJKsansfont{WenQuanYi Zen Hei}
+\setCJKmonofont{AR PL UMing CN}
+\setCJKfamilyfont{zhsong}{AR PL SungtiL GB}
+\setCJKfamilyfont{zhhei}{WenQuanYi Zen Hei}
+\setCJKfamilyfont{zhkai}{AR PL KaitiM GB}
+\setCJKfamilyfont{zhfs}{AR PL UMing CN}
+\setCJKfamilyfont{zhli}{WenQuanYi Zen Hei Mono}
+\setCJKfamilyfont{zhyou}{AR PL SungtiL GB}
+\setCJKfamilyfont{wqy}{WenQuanYi Zen Hei}
+\setCJKfamilyfont{uming}{AR PL UMing CN}
+\setCJKfamilyfont{ukai}{AR PL UKai CN}
+\setCJKfamilyfont{kaitim}{AR PL KaitiM GB}
+\setCJKfamilyfont{sungtil}{AR PL SungtiL GB}
+\newcommand*{\wqy}{\CJKfamily{wqy}} % 文泉驿正黑
+\newcommand*{\uming}{\CJKfamily{uming}}
+% AR PL UMing CN
+\newcommand*{\ukai}{\CJKfamily{ukai}}
+% AR PL UKai CN
+\newcommand*{\kaitim}{\CJKfamily{kaitim}}
+% 文鼎PL简中楷
+\newcommand*{\sungtil}{\CJKfamily{sungtil}} % 文鼎PL简报宋
+\newcommand*{\songti}{\CJKfamily{zhsong}} % 宋体
+\newcommand*{\heiti}{\CJKfamily{zhhei}}
+% 黑体
+\newcommand*{\kaishu}{\CJKfamily{zhkai}}
+% 楷书
+\newcommand*{\fangsong}{\CJKfamily{zhfs}} % 仿宋
+\newcommand*{\lishu}{\CJKfamily{zhli}}
+% 隶书
+\newcommand*{\youyuan}{\CJKfamily{zhyou}} % 幼圆
+\endinput
+&lt;/pre&gt;
+&lt;p&gt;简单的说明一下：这里用 ”文鼎PL简报宋” 替换 “宋体”, 用 “文泉驿正黑” 替换 “黑体”, 用 “文鼎PL简中楷” 替换 “楷体” 等等,
+还把这些字体定义为新的命令,例如: {wqy 文泉驿正黑} 就可以用来显示文泉驿正黑字体。也可以使用免费的方正字体。
+&lt;strong&gt;这里要注意的是，在进行字体配置时，要明确一下系统中是否存在这些字体&lt;/strong&gt; ，查看系统字体的方法为:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+fc-list :lang=zh-cn
+&lt;/pre&gt;
+&lt;p&gt;如果系统中没有所需的字体，需下载安装之后才能使用。
+然后修改文件 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/usr/share/texmf/tex/latex/ctex/opt/ctex-common-opts.def&lt;/span&gt;&lt;/tt&gt; (注意权限),
+把其中的:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+% fonts
+\newif\ifCTEX&amp;#64;nofonts \CTEX&amp;#64;nofontsfalse
+\newif\ifCTEX&amp;#64;winfonts \CTEX&amp;#64;winfontstrue
+\newif\ifCTEX&amp;#64;adobefonts \CTEX&amp;#64;adobefontsfalse
+\DeclareOption{nofonts}{\CTEX&amp;#64;nofontstrue
+\CTEX&amp;#64;winfontsfalse
+\CTEX&amp;#64;adobefontsfalse}
+\DeclareOption{winfonts}{\CTEX&amp;#64;winfontstrue
+\CTEX&amp;#64;nofontsfalse
+\CTEX&amp;#64;adobefontsfalse}
+\DeclareOption{adobefonts}{\CTEX&amp;#64;adobefontstrue
+\CTEX&amp;#64;nofontsfalse
+\CTEX&amp;#64;winfontsfalse}
+&lt;/pre&gt;
+&lt;p&gt;修改为:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+% fonts
+\newif\ifCTEX&amp;#64;nofonts \CTEX&amp;#64;nofontsfalse
+\newif\ifCTEX&amp;#64;winfonts \CTEX&amp;#64;winfontstrue
+\newif\ifCTEX&amp;#64;adobefonts \CTEX&amp;#64;adobefontsfalse
+\newif\ifCTEX&amp;#64;unixfonts \CTEX&amp;#64;unixfontsfalse
+\DeclareOption{nofonts}{\CTEX&amp;#64;nofontstrue
+\CTEX&amp;#64;winfontsfalse
+\CTEX&amp;#64;adobefontsfalse
+\CTEX&amp;#64;unixfontsfalse}
+\DeclareOption{winfonts}{\CTEX&amp;#64;winfontstrue
+\CTEX&amp;#64;nofontsfalse
+\CTEX&amp;#64;adobefontsfalse
+\CTEX&amp;#64;unixfontsfalse}
+\DeclareOption{adobefonts}{\CTEX&amp;#64;adobefontstrue
+\CTEX&amp;#64;nofontsfalse
+\CTEX&amp;#64;winfontsfalse
+\CTEX&amp;#64;unixfontsfalse}
+\DeclareOption{unixfonts}{\CTEX&amp;#64;unixfontstrue
+\CTEX&amp;#64;nofontsfalse
+\CTEX&amp;#64;winfontsfalse
+\CTEX&amp;#64;adobefontsfalse}
+&lt;/pre&gt;
+&lt;p&gt;接下来修改 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/usr/share/texmf/tex/latex/ctex/engine/ctex-xecjk-engine.def&lt;/span&gt;&lt;/tt&gt;, 把其中的:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+\ifCTEX&amp;#64;nofonts\else
+\ifCTEX&amp;#64;winfonts
+\input{ctex-xecjk-winfonts.def}
+\else\ifCTEX&amp;#64;adobefonts
+\input{ctex-xecjk-adobefonts.def}
+\fi\fi
+\fi
+&lt;/pre&gt;
+&lt;p&gt;修改为:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+       \begin{verbatim}
+       \ifCTEX&amp;#64;nofonts\else
+       \ifCTEX&amp;#64;winfonts
+       \input{ctex-xecjk-winfonts.def}
+       \else\ifCTEX&amp;#64;adobefonts
+       \input{ctex-xecjk-adobefonts.def}
+       \else\ifCTEX&amp;#64;unixfonts
+       \input{ctex-xecjk-unixfonts.def}
+       \fi\fi\fi
+       \fi
+
+最后，把 ctex 默认字体集改为 unixfonts：其实在上面一步的时候也可以修改，不过还是这样改把，
+添加文件 ``/usr/share/texmf/tex/latex/ctex/cfg/ctexopts.cfg``, 内容是::
+
+       % ctexopts.cfg.template: set default options
+       % vim:ft=tex
+       \ExecuteOptions{unixfonts}
+       \endinput
+&lt;/pre&gt;
+&lt;p&gt;更新 texlsr，即命令输入:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo mktexlsr
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="latex"&gt;
+&lt;h2&gt;使用 Latex 编写中文&lt;/h2&gt;
+&lt;p&gt;在编写时，需要使用 ctex 宏包:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+\usepackage{ctex}
+&lt;/pre&gt;
+&lt;p&gt;还有两点需要注意：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;要采用 XeCJK 对 Latex 源码进行编译，而不是 pdfLatex 或者 Latex，编译之后直接输出 pdf 文件&lt;/li&gt;
+&lt;li&gt;源文件编码方式为 utf-8，否则会出现乱码现象&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;参考文献&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://forum.ubuntu.org.cn/download/file.php?id=100220&amp;amp;sid=7e476fa476d6e5bc0f6a2a147bfa316c"&gt;Texlive 2009 安装手记&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="openSUSE"></category><category term="Linux"></category></entry><entry><title>如何安装 fcitx</title><link href="/dfshan_blog/ru-he-an-zhuang-fcitx.html" rel="alternate"></link><updated>2014-09-17T17:10:00+08:00</updated><author><name>Danfeng Shan</name></author><id>tag:,2014-09-17:dfshan_blog/ru-he-an-zhuang-fcitx.html</id><summary type="html">&lt;p&gt;以ubuntu为例，说明安装企鹅输入法的步骤
+首先，要先卸载 ibus:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo apt-get remove ibus
+&lt;/pre&gt;
+&lt;p&gt;然后，通过 &amp;quot;apt-get&amp;quot; 命令，安装企鹅输入法以及谷歌拼音:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo apt-get install fcitx fcitx-googlepinyin
+&lt;/pre&gt;
+&lt;p&gt;安装完之后，在终端下可能还不能切换，因此，要修改终端的 .bashrc 文件，向其添加如下内容:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+export GTK_IM_MODULE=xim
+export QT_IM_MODULE=xim
+export XMODIFIERS=&amp;quot;&amp;#64;im=fcitx&amp;quot;
+&lt;/pre&gt;
+</summary><category term="Linux"></category></entry><entry><title>How to Change the Web Port of GitLab</title><link href="/dfshan_blog/how-to-change-the-web-port-of-gitlab.html" rel="alternate"></link><updated>2014-09-17T11:10:00+08:00</updated><author><name>Danfeng Shan</name></author><id>tag:,2014-09-17:dfshan_blog/how-to-change-the-web-port-of-gitlab.html</id><summary type="html">&lt;div class="section" id="step-1-gitlab-shell"&gt;
+&lt;h2&gt;Step 1: GitLab Shell&lt;/h2&gt;
+&lt;p&gt;Change the GitLab Shell config file: &lt;cite&gt;/home/git/gitlab-shell/config.yml&lt;/cite&gt;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+gitlab_url: &amp;quot;http://***.***.***.***:83/&amp;quot;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="step-2-gitlab"&gt;
+&lt;h2&gt;Step 2: GitLab&lt;/h2&gt;
+&lt;p&gt;Change the GitLab config file: &lt;cite&gt;/home/git/gitlab/config/gitlab.yml&lt;/cite&gt;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+host: ***.***.***.***
+port: 83
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="step-3-ngnix"&gt;
+&lt;h2&gt;Step 3: ngnix&lt;/h2&gt;
+&lt;p&gt;Change the nginx config file: ` /etc/nginx/sites-available/gitlab`:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+listen *:83 default_server;
+&lt;/pre&gt;
+&lt;/div&gt;
+</summary><category term="GitLab"></category></entry></feed>

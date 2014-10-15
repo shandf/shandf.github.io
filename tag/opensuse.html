@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Danfeng Shan</title>
+        <title> Articles in openSUSE tag - Danfeng Shan</title>
         <meta charset="utf-8" />
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
         <link href="/dfshan_blog/theme/static/css/style.css" rel="stylesheet" />
@@ -12,53 +12,15 @@
         <div class="container">
             <div class="header">
                 <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="/dfshan_blog">Home</a></li>
-                    <li><a href="/dfshan_blog/archives.html">Archives</a></li>
+                    <li class=""><a href="/dfshan_blog">Home</a></li>
+                    <li class="active"active><a href="/dfshan_blog/archives.html">Archives</a></li>
                 </ul>
                 <h3 class="text-muted"><a href="/dfshan_blog">Danfeng Shan</a></h3>
 				<h2 class="text-muted"></h2>
              </div>
 <section id="content" class="content">
+<h2>Articles with the openSUSE tag</h2>
 
-        <article class="hentry">
-                <header> <h2 class="entry-title"><a href="/dfshan_blog/welcome.html" rel="bookmark" title="Permalink to Welcome!">Welcome!</a></h2> </header>
-                <div class="entry-content"> <p>Welcome to my site!</p>
-<!-- :save_as: index.html -->
-<embed><script type="text/javascript" src="//rd.revolvermaps.com/0/0/6.js?i=35qwtxu8jzj&amp;m=7&amp;s=320&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script></embed> </div><!-- entry-content -->
-        </article>
-        <article class="hentry">
-                <header> <h2 class="entry-title"><a href="/dfshan_blog/windows-xia-jiao-huan-caps-jian-yu-ctrl-jian.html" rel="bookmark" title="Permalink to Windows 下交换 Caps 键与 Ctrl 键">Windows 下交换 Caps 键与 Ctrl 键</a></h2> </header>
-                <div class="entry-content"> <div class="section" id="id1">
-<h2>打开注册表编辑器</h2>
-<p><tt class="docutils literal">win + R</tt> 打开运行，输入 <tt class="docutils literal">regedit</tt></p>
-</div>
-<div class="section" id="id2">
-<h2>找到目标文件夹</h2>
-<p><tt class="docutils literal">HKEY_LOCAL_MACHINE <span class="pre">-&gt;</span> System <span class="pre">-&gt;</span> CurrentControlSet <span class="pre">-&gt;</span> Control <span class="pre">-&gt;</span> KeyBoard Layout</tt></p>
-</div>
-<div class="section" id="id3">
-<h2>新建注册表项</h2>
-<p>右击该文件夹，点击 <tt class="docutils literal">新建 <span class="pre">-&gt;</span> 二进制值</tt>, 修改注册表项的名字为 <tt class="docutils literal">Scancode Map</tt>,
-然后右击该注册表项，点击 <tt class="docutils literal">修改二进制数据</tt>, 手动输入如下数据:</p>
-<pre class="literal-block">
-0000 00 00 00 00 00 00 00 00
-0008 03 00 00 00 3A 00 1D 00
-0010 1D 00 3A 00 00 00 ...</pre></div> </div><!-- entry-content -->
-        </article>
-        <article class="hentry">
-                <header> <h2 class="entry-title"><a href="/dfshan_blog/additional-list.html" rel="bookmark" title="Permalink to Additional List">Additional List</a></h2> </header>
-                <div class="entry-content"> <p>我说最近下论文怎么变得这么慢...........................了，原来是这几个网址 &quot;搞的鬼&quot;:</p>
-<pre class="literal-block">
-staticieeexplore.ieee.org
-portalparts.acm.org
-delivery.acm.org
-</pre>
-<p>另外，经常出现个人主页打开很慢的情形，这是由这个网址 &quot;搞的鬼&quot;:</p>
-<pre class="literal-block">
-googleapis.com
-</pre>
- </div><!-- entry-content -->
-        </article>
         <article class="hentry">
                 <header> <h2 class="entry-title"><a href="/dfshan_blog/linuxkde-xia-zi-ti-de-she-zhi.html" rel="bookmark" title="Permalink to Linux(KDE) 下字体的设置">Linux(KDE) 下字体的设置</a></h2> </header>
                 <div class="entry-content"> <p><strong>Sans-serif=无衬线体=黑体</strong>：并不是具体一款字体，而是一类字体，选择它其实等于选择这类字体中优先级最高的那款字体。</p>
@@ -90,10 +52,27 @@ Recompiling VirtualBox kernel module, NOT. It has been packaged.
 卸载所有与 virtualbox 相关的包，并安装内核源码 &quot;kernel-desktop-devel&quot;，下载 virtualbox 官网上的 rpm 包，安装，成功解决问题。</p>
  </div><!-- entry-content -->
         </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/dfshan_blog/opensuse-xia-latex-zhong-wen-jie-jue-fang-an.html" rel="bookmark" title="Permalink to openSUSE 下 Latex 中文解决方案">openSUSE 下 Latex 中文解决方案</a></h2> </header>
+                <div class="entry-content"> <p>在 Linux 下使用 Latex 编译中文文档时，经常出现字体无法找到的命令，
+因此按照如下步骤来解决 Latex 的中文字体配置。</p>
+<div class="section" id="texlive">
+<h2>安装 texlive</h2>
+<pre class="literal-block">
+sudo zypper in texlive
+</pre>
+<p>检查是否已经安装 &quot;texlive-ctex&quot; &quot;texlive-xecjk&quot; &quot;texlive-xetex&quot; （一般是默认安装的）</p>
+</div>
+<div class="section" id="id1">
+<h2>配置中文字体</h2>
+<p>在配置中文字体之前，首先要确认 texlive 的 “termf” 文件夹的安装位置，为 <tt class="docutils literal">/usr/share/texmf/</tt>
+如果是通过 texlive 提供的安装盘安装的，则该文件夹的位置为 <tt class="docutils literal"><span class="pre">/usr/local/texlive/2014/texmf-dist</span></tt></p>
+<p>然后，进入目录 <tt class="docutils literal">/usr/share/texmf/tex/latex/ctex/fontset/</tt> 并创建文件 ...</p></div> </div><!-- entry-content -->
+        </article>
 <div class="pager">
       <ul>
                         <li class="previous disabled"><a>← Previous</a></li>
-						<li class="next"><a href="/dfshan_blog/index2.html">Next →</a></li>
+                        <li class="next disabled"><a>Next →</a></li>
       </ul>
     </div>
 </section><!-- content -->

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Linux(KDE) 下字体的设置 - Danfeng Shan</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/dfshan_blog/theme/static/css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href="/dfshan_blog">Home</a></li>
+                    <li><a href="/dfshan_blog/archives.html">Archives</a></li>
+                </ul>
+                <h3 class="text-muted"><a href="/dfshan_blog">Danfeng Shan</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="/dfshan_blog/linuxkde-xia-zi-ti-de-she-zhi.html" rel="bookmark"
+         title="Permalink to Linux(KDE) 下字体的设置">Linux(KDE) 下字体的设置</a></h2>
+ 
+  </header>
+  
+     
+  <div class="entry-content">
+    <p><strong>Sans-serif=无衬线体=黑体</strong>：并不是具体一款字体，而是一类字体，选择它其实等于选择这类字体中优先级最高的那款字体。</p>
+<p><strong>Serif=衬线体=白体</strong>：同上</p>
+<p><strong>Monospace=等宽字体</strong>，意思是字符宽度相同：同上</p>
+<p><strong>点阵字体=位图字体</strong></p>
+<p>无衬线体更适合电脑屏幕阅读，衬线体适合打印。因为衬线可以使得人视线平齐于一行。也就是说不会读破行。</p>
+<p>中文显示时有不同的方式，一方面因为中文本身拥有的横和同高度就可以导致这种平齐。行距对中文更重要。</p>
+<div class="section" id="id1">
+<h2>修改字体的优先级：</h2>
+<pre class="literal-block">
+/etc/fonts/fonts.conf #系统配置文件，需要root权限才能操作，对需要输入root密码的程序有效
+~/.config/fontconfig/fonts.conf #用户配置文件，随便怎么搞，只对当前用户运行的程序有效
+</pre>
+</div>
+<div class="section" id="id2">
+<h2>字体安装：</h2>
+<pre class="literal-block">
+sudo mkdir -p /usr/share/fonts/win # 新建文件夹
+sudo cp Yahei.ttf /usr/share/fonts/win/ # 复制字体文件
+sudo chmod 644 /usr/share/fonts/win/*.ttf # 修改权限
+cd /usr/share/fonts/win/
+# 安装字体
+sudo mkfontscale
+sudo mkfontdir
+sudo fc-cache -fv
+</pre>
+</div>
+<div class="section" id="id3">
+<h2>常用命令：</h2>
+<pre class="literal-block">
+fc-cache -fv #通常复制字体进~/.fonts就会自动刷新字体，如果没有，用这个命令，如果复制进的是/usr/share/fonts/，用sudo fc-cache -fv
+fc-match sans-serif #抓取当前用户sans-serif类字体优先级最高的那款字体
+fc-match serif #抓取当前用户serif类字体优先级最高的那款字体
+fc-match monospace #抓取当前用户monospace类字体优先级最高的那款字体
+</pre>
+</div>
+<div class="section" id="id4">
+<h2>参考文献：</h2>
+<pre class="literal-block">
+[1] http://wiki.ubuntu.com.cn/%E5%AD%97%E4%BD%93
+[2] http://os.51cto.com/art/201004/192461.htm
+</pre>
+</div>
+
+  </div><!-- /.entry-content -->
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2014-09-17T19:10:00">
+      Wed 17 September 2014
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="/dfshan_blog/author/danfeng-shan.html">Danfeng Shan</a>
+    </address> in <a href="/dfshan_blog/category/linux.html">Linux</a> Tagged <a href="/dfshan_blog/tag/opensuse.html">openSUSE </a><a href="/dfshan_blog/tag/linux.html">Linux </a>  </footer><!-- /.post-info -->
+</section>
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="/dfshan_blog/None">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="/dfshan_blog">Danfeng Shan</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>

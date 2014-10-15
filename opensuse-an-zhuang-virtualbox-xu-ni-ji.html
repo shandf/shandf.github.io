@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>openSUSE 安装 VirtualBox 虚拟机 - Danfeng Shan</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/dfshan_blog/theme/static/css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href="/dfshan_blog">Home</a></li>
+                    <li><a href="/dfshan_blog/archives.html">Archives</a></li>
+                </ul>
+                <h3 class="text-muted"><a href="/dfshan_blog">Danfeng Shan</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="/dfshan_blog/opensuse-an-zhuang-virtualbox-xu-ni-ji.html" rel="bookmark"
+         title="Permalink to openSUSE 安装 VirtualBox 虚拟机">openSUSE 安装 VirtualBox 虚拟机</a></h2>
+ 
+  </header>
+  
+     
+  <div class="entry-content">
+    <p>使用 <tt class="docutils literal">sudo zypper in virtualbox</tt> 之后出现问题，提示运行命令 <tt class="docutils literal">/etc/init.d/vboxdrv setup</tt> 安装内核模块，可是输入命令之后产生如下输出:</p>
+<pre class="literal-block">
+Recompiling VirtualBox kernel module, NOT. It has been packaged.
+</pre>
+<p>阅读 <tt class="docutils literal">/etc/ini.d/vboxdrv</tt> 内容之后，发现 setup 函数只做一件事：输出上面的内容。所以，可以肯定，应该是安装时出现的问题。
+卸载所有与 virtualbox 相关的包，并安装内核源码 &quot;kernel-desktop-devel&quot;，下载 virtualbox 官网上的 rpm 包，安装，成功解决问题。</p>
+
+  </div><!-- /.entry-content -->
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2014-09-17T19:10:00">
+      Wed 17 September 2014
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="/dfshan_blog/author/danfeng-shan.html">Danfeng Shan</a>
+    </address> in <a href="/dfshan_blog/category/linux.html">Linux</a> Tagged <a href="/dfshan_blog/tag/gitlab.html">GitLab </a><a href="/dfshan_blog/tag/opensuse.html">openSUSE </a>  </footer><!-- /.post-info -->
+</section>
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="/dfshan_blog/None">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="/dfshan_blog">Danfeng Shan</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>
