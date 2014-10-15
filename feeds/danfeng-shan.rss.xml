@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Danfeng Shan</title><link>/dfshan_blog/</link><description></description><atom:link href="/dfshan_blog/feeds/danfeng-shan.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0800</lastBuildDate><item><title>Welcome!</title><link>/dfshan_blog/welcome.html</link><description>&lt;p&gt;Welcome to my site!&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Danfeng Shan</title><link>/</link><description></description><atom:link href="/feeds/danfeng-shan.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0800</lastBuildDate><item><title>Welcome!</title><link>/welcome.html</link><description>&lt;p&gt;Welcome to my site!&lt;/p&gt;
 &lt;!-- :save_as: index.html --&gt;
-&lt;embed&gt;&lt;script type="text/javascript" src="//rd.revolvermaps.com/0/0/6.js?i=35qwtxu8jzj&amp;amp;m=7&amp;amp;s=320&amp;amp;c=e63100&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=0&amp;amp;bv=90&amp;amp;lx=-420&amp;amp;ly=420&amp;amp;hi=20&amp;amp;he=7&amp;amp;hc=a8ddff&amp;amp;rs=80" async="async"&gt;&lt;/script&gt;&lt;/embed&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Wed, 01 Jan 2020 00:00:00 +0800</pubDate><guid>tag:,2020-01-01:dfshan_blog/welcome.html</guid></item><item><title>Windows 下交换 Caps 键与 Ctrl 键</title><link>/dfshan_blog/windows-xia-jiao-huan-caps-jian-yu-ctrl-jian.html</link><description>&lt;div class="section" id="id1"&gt;
+&lt;embed&gt;&lt;script type="text/javascript" src="//rd.revolvermaps.com/0/0/6.js?i=35qwtxu8jzj&amp;amp;m=7&amp;amp;s=320&amp;amp;c=e63100&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=0&amp;amp;bv=90&amp;amp;lx=-420&amp;amp;ly=420&amp;amp;hi=20&amp;amp;he=7&amp;amp;hc=a8ddff&amp;amp;rs=80" async="async"&gt;&lt;/script&gt;&lt;/embed&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Wed, 01 Jan 2020 00:00:00 +0800</pubDate><guid>tag:,2020-01-01:welcome.html</guid></item><item><title>openSUSE 下安装 ns-2</title><link>/opensuse-xia-an-zhuang-ns-2.html</link><description>&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;需要安装的库&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+sudo zypper in libX11-devel xorg-x11-devel
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;出现的错误&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;错误&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+inkstate/ls.h:137:20: error: ‘erase’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;出错原因&lt;/strong&gt;:
+新版本的编译器有一些新的改变&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决&lt;/strong&gt;:
+修改文件 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;ns-2.35/linkstate/ls.h&lt;/span&gt;&lt;/tt&gt; 137 行，
+将 &lt;tt class="docutils literal"&gt;void eraseAll() { &lt;span class="pre"&gt;erase(baseMap::begin(),&lt;/span&gt; &lt;span class="pre"&gt;baseMap::end());&lt;/span&gt; }&lt;/tt&gt;
+替换为 &lt;tt class="docutils literal"&gt;void eraseAll() { &lt;span class="pre"&gt;this-&amp;gt;erase(baseMap::begin(),&lt;/span&gt; &lt;span class="pre"&gt;baseMap::end());&lt;/span&gt; }&lt;/tt&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Thu, 16 Oct 2014 22:04:00 +0800</pubDate><guid>tag:,2014-10-16:opensuse-xia-an-zhuang-ns-2.html</guid><category>openSUSE</category><category>Linux</category></item><item><title>Windows 下交换 Caps 键与 Ctrl 键</title><link>/windows-xia-jiao-huan-caps-jian-yu-ctrl-jian.html</link><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;打开注册表编辑器&lt;/h2&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;win + R&lt;/tt&gt; 打开运行，输入 &lt;tt class="docutils literal"&gt;regedit&lt;/tt&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -23,7 +42,7 @@
 重启
 -----&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Tue, 23 Sep 2014 11:06:00 +0800</pubDate><guid>tag:,2014-09-23:dfshan_blog/windows-xia-jiao-huan-caps-jian-yu-ctrl-jian.html</guid><category>Windows</category></item><item><title>Additional List</title><link>/dfshan_blog/additional-list.html</link><description>&lt;p&gt;我说最近下论文怎么变得这么慢...........................了，原来是这几个网址 &amp;quot;搞的鬼&amp;quot;:&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Tue, 23 Sep 2014 11:06:00 +0800</pubDate><guid>tag:,2014-09-23:windows-xia-jiao-huan-caps-jian-yu-ctrl-jian.html</guid><category>Windows</category></item><item><title>Additional List</title><link>/additional-list.html</link><description>&lt;p&gt;我说最近下论文怎么变得这么慢...........................了，原来是这几个网址 &amp;quot;搞的鬼&amp;quot;:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 staticieeexplore.ieee.org
 portalparts.acm.org
@@ -33,27 +52,7 @@ delivery.acm.org
 &lt;pre class="literal-block"&gt;
 googleapis.com
 &lt;/pre&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Sun, 21 Sep 2014 11:20:00 +0800</pubDate><guid>tag:,2014-09-21:dfshan_blog/additional-list.html</guid></item><item><title>ns-2 安装</title><link>/dfshan_blog/ns-2-an-zhuang.html</link><description>&lt;div class="section" id="id1"&gt;
-&lt;h2&gt;需要安装的库&lt;/h2&gt;
-&lt;dl class="docutils"&gt;
-&lt;dt&gt;::&lt;/dt&gt;
-&lt;dd&gt;sudo zypper in libX11-devel xorg-x11-devel&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id2"&gt;
-&lt;h2&gt;出现的错误&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;错误&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-inkstate/ls.h:137:20: error: ‘erase’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
-&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;出错原因&lt;/strong&gt;:
-新版本的编译器有一些新的改变&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;解决&lt;/strong&gt;:
-修改文件 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;ns-2.35/linkstate/ls.h&lt;/span&gt;&lt;/tt&gt; 137 行，
-将 &lt;tt class="docutils literal"&gt;void eraseAll() { &lt;span class="pre"&gt;erase(baseMap::begin(),&lt;/span&gt; &lt;span class="pre"&gt;baseMap::end());&lt;/span&gt; }&lt;/tt&gt;
-替换为 &lt;tt class="docutils literal"&gt;void eraseAll() { &lt;span class="pre"&gt;this-&amp;gt;erase(baseMap::begin(),&lt;/span&gt; &lt;span class="pre"&gt;baseMap::end());&lt;/span&gt; }&lt;/tt&gt;&lt;/p&gt;
-&lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Sun, 21 Sep 2014 11:20:00 +0800</pubDate><guid>tag:,2014-09-21:dfshan_blog/ns-2-an-zhuang.html</guid><category>openSUSE</category><category>Linux</category></item><item><title>Linux(KDE) 下字体的设置</title><link>/dfshan_blog/linuxkde-xia-zi-ti-de-she-zhi.html</link><description>&lt;p&gt;&lt;strong&gt;Sans-serif=无衬线体=黑体&lt;/strong&gt;：并不是具体一款字体，而是一类字体，选择它其实等于选择这类字体中优先级最高的那款字体。&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Sun, 21 Sep 2014 11:20:00 +0800</pubDate><guid>tag:,2014-09-21:additional-list.html</guid></item><item><title>Linux(KDE) 下字体的设置</title><link>/linuxkde-xia-zi-ti-de-she-zhi.html</link><description>&lt;p&gt;&lt;strong&gt;Sans-serif=无衬线体=黑体&lt;/strong&gt;：并不是具体一款字体，而是一类字体，选择它其实等于选择这类字体中优先级最高的那款字体。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Serif=衬线体=白体&lt;/strong&gt;：同上&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Monospace=等宽字体&lt;/strong&gt;，意思是字符宽度相同：同上&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;点阵字体=位图字体&lt;/strong&gt;&lt;/p&gt;
@@ -95,13 +94,13 @@ fc-match monospace #抓取当前用户monospace类字体优先级最高的那款
 [2] http://os.51cto.com/art/201004/192461.htm
 &lt;/pre&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Wed, 17 Sep 2014 19:10:00 +0800</pubDate><guid>tag:,2014-09-17:dfshan_blog/linuxkde-xia-zi-ti-de-she-zhi.html</guid><category>openSUSE</category><category>Linux</category></item><item><title>openSUSE 安装 VirtualBox 虚拟机</title><link>/dfshan_blog/opensuse-an-zhuang-virtualbox-xu-ni-ji.html</link><description>&lt;p&gt;使用 &lt;tt class="docutils literal"&gt;sudo zypper in virtualbox&lt;/tt&gt; 之后出现问题，提示运行命令 &lt;tt class="docutils literal"&gt;/etc/init.d/vboxdrv setup&lt;/tt&gt; 安装内核模块，可是输入命令之后产生如下输出:&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Wed, 17 Sep 2014 19:10:00 +0800</pubDate><guid>tag:,2014-09-17:linuxkde-xia-zi-ti-de-she-zhi.html</guid><category>openSUSE</category><category>Linux</category></item><item><title>openSUSE 安装 VirtualBox 虚拟机</title><link>/opensuse-an-zhuang-virtualbox-xu-ni-ji.html</link><description>&lt;p&gt;使用 &lt;tt class="docutils literal"&gt;sudo zypper in virtualbox&lt;/tt&gt; 之后出现问题，提示运行命令 &lt;tt class="docutils literal"&gt;/etc/init.d/vboxdrv setup&lt;/tt&gt; 安装内核模块，可是输入命令之后产生如下输出:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 Recompiling VirtualBox kernel module, NOT. It has been packaged.
 &lt;/pre&gt;
 &lt;p&gt;阅读 &lt;tt class="docutils literal"&gt;/etc/ini.d/vboxdrv&lt;/tt&gt; 内容之后，发现 setup 函数只做一件事：输出上面的内容。所以，可以肯定，应该是安装时出现的问题。
 卸载所有与 virtualbox 相关的包，并安装内核源码 &amp;quot;kernel-desktop-devel&amp;quot;，下载 virtualbox 官网上的 rpm 包，安装，成功解决问题。&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Wed, 17 Sep 2014 19:10:00 +0800</pubDate><guid>tag:,2014-09-17:dfshan_blog/opensuse-an-zhuang-virtualbox-xu-ni-ji.html</guid><category>GitLab</category><category>openSUSE</category></item><item><title>openSUSE 下 Latex 中文解决方案</title><link>/dfshan_blog/opensuse-xia-latex-zhong-wen-jie-jue-fang-an.html</link><description>&lt;p&gt;在 Linux 下使用 Latex 编译中文文档时，经常出现字体无法找到的命令，
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Wed, 17 Sep 2014 19:10:00 +0800</pubDate><guid>tag:,2014-09-17:opensuse-an-zhuang-virtualbox-xu-ni-ji.html</guid><category>GitLab</category><category>openSUSE</category></item><item><title>openSUSE 下 Latex 中文解决方案</title><link>/opensuse-xia-latex-zhong-wen-jie-jue-fang-an.html</link><description>&lt;p&gt;在 Linux 下使用 Latex 编译中文文档时，经常出现字体无法找到的命令，
 因此按照如下步骤来解决 Latex 的中文字体配置。&lt;/p&gt;
 &lt;div class="section" id="texlive"&gt;
 &lt;h2&gt;安装 texlive&lt;/h2&gt;
@@ -253,7 +252,7 @@ sudo mktexlsr
 &lt;h2&gt;参考文献&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://forum.ubuntu.org.cn/download/file.php?id=100220&amp;amp;sid=7e476fa476d6e5bc0f6a2a147bfa316c"&gt;Texlive 2009 安装手记&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Wed, 17 Sep 2014 19:10:00 +0800</pubDate><guid>tag:,2014-09-17:dfshan_blog/opensuse-xia-latex-zhong-wen-jie-jue-fang-an.html</guid><category>openSUSE</category><category>Linux</category></item><item><title>如何安装 fcitx</title><link>/dfshan_blog/ru-he-an-zhuang-fcitx.html</link><description>&lt;p&gt;以ubuntu为例，说明安装企鹅输入法的步骤
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Wed, 17 Sep 2014 19:10:00 +0800</pubDate><guid>tag:,2014-09-17:opensuse-xia-latex-zhong-wen-jie-jue-fang-an.html</guid><category>openSUSE</category><category>Linux</category></item><item><title>如何安装 fcitx</title><link>/ru-he-an-zhuang-fcitx.html</link><description>&lt;p&gt;以ubuntu为例，说明安装企鹅输入法的步骤
 首先，要先卸载 ibus:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 sudo apt-get remove ibus
@@ -268,7 +267,7 @@ export GTK_IM_MODULE=xim
 export QT_IM_MODULE=xim
 export XMODIFIERS=&amp;quot;&amp;#64;im=fcitx&amp;quot;
 &lt;/pre&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Wed, 17 Sep 2014 17:10:00 +0800</pubDate><guid>tag:,2014-09-17:dfshan_blog/ru-he-an-zhuang-fcitx.html</guid><category>Linux</category></item><item><title>How to Change the Web Port of GitLab</title><link>/dfshan_blog/how-to-change-the-web-port-of-gitlab.html</link><description>&lt;div class="section" id="step-1-gitlab-shell"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Wed, 17 Sep 2014 17:10:00 +0800</pubDate><guid>tag:,2014-09-17:ru-he-an-zhuang-fcitx.html</guid><category>Linux</category></item><item><title>How to Change the Web Port of GitLab</title><link>/how-to-change-the-web-port-of-gitlab.html</link><description>&lt;div class="section" id="step-1-gitlab-shell"&gt;
 &lt;h2&gt;Step 1: GitLab Shell&lt;/h2&gt;
 &lt;p&gt;Change the GitLab Shell config file: &lt;cite&gt;/home/git/gitlab-shell/config.yml&lt;/cite&gt;:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -290,4 +289,4 @@ port: 83
 listen *:83 default_server;
 &lt;/pre&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Wed, 17 Sep 2014 11:10:00 +0800</pubDate><guid>tag:,2014-09-17:dfshan_blog/how-to-change-the-web-port-of-gitlab.html</guid><category>GitLab</category></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Wed, 17 Sep 2014 11:10:00 +0800</pubDate><guid>tag:,2014-09-17:how-to-change-the-web-port-of-gitlab.html</guid><category>GitLab</category></item></channel></rss>
