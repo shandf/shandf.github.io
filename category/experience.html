@@ -55,6 +55,27 @@ googleapis.com
  </div><!-- entry-content -->
         </article>
         <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/dfshan_blog/zai-opensuse-xia-an-zhuang-ns-2-yu-dao-de-wen-ti-yi-ji-jie-jue-fang-an.html" rel="bookmark" title="Permalink to 在 openSUSE 下安装 ns-2 遇到的问题以及解决方案">在 openSUSE 下安装 ns-2 遇到的问题以及解决方案</a></h2> </header>
+                <div class="entry-content"> <div class="section" id="id1">
+<h2>需要安装的库</h2>
+<dl class="docutils">
+<dt>::</dt>
+<dd>sudo zypper in libX11-devel xorg-x11-devel</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>出现的错误</h2>
+<p><strong>错误</strong>:</p>
+<pre class="literal-block">
+inkstate/ls.h:137:20: error: ‘erase’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+</pre>
+<p><strong>出错原因</strong>:
+新版本的编译器有一些新的改变</p>
+<p><strong>解决</strong>:
+修改文件 <tt class="docutils literal"><span class="pre">ns-2.35/linkstate/ls.h</span></tt> 137 行，
+将 <tt class="docutils literal">void eraseAll() { <span class="pre">erase ...</span></tt></p></div> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
                 <header> <h2 class="entry-title"><a href="/dfshan_blog/how-to-change-the-web-port-of-gitlab.html" rel="bookmark" title="Permalink to How to Change the Web Port of GitLab">How to Change the Web Port of GitLab</a></h2> </header>
                 <div class="entry-content"> <div class="section" id="step-1-gitlab-shell">
 <h2>Step 1: GitLab Shell</h2>

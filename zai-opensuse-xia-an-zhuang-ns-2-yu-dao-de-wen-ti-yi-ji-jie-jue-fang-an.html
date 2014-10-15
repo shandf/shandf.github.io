@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>在 openSUSE 下安装 ns-2 遇到的问题以及解决方案 - Danfeng Shan</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/dfshan_blog/theme/static/css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href="/dfshan_blog">Home</a></li>
+                    <li><a href="/dfshan_blog/archives.html">Archives</a></li>
+                </ul>
+                <h3 class="text-muted"><a href="/dfshan_blog">Danfeng Shan</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="/dfshan_blog/zai-opensuse-xia-an-zhuang-ns-2-yu-dao-de-wen-ti-yi-ji-jie-jue-fang-an.html" rel="bookmark"
+         title="Permalink to 在 openSUSE 下安装 ns-2 遇到的问题以及解决方案">在 openSUSE 下安装 ns-2 遇到的问题以及解决方案</a></h2>
+ 
+  </header>
+  
+     
+  <div class="entry-content">
+    <div class="section" id="id1">
+<h2>需要安装的库</h2>
+<dl class="docutils">
+<dt>::</dt>
+<dd>sudo zypper in libX11-devel xorg-x11-devel</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>出现的错误</h2>
+<p><strong>错误</strong>:</p>
+<pre class="literal-block">
+inkstate/ls.h:137:20: error: ‘erase’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+</pre>
+<p><strong>出错原因</strong>:
+新版本的编译器有一些新的改变</p>
+<p><strong>解决</strong>:
+修改文件 <tt class="docutils literal"><span class="pre">ns-2.35/linkstate/ls.h</span></tt> 137 行，
+将 <tt class="docutils literal">void eraseAll() { <span class="pre">erase(baseMap::begin(),</span> <span class="pre">baseMap::end());</span> }</tt>
+替换为 <tt class="docutils literal">void eraseAll() { <span class="pre">this-&gt;erase(baseMap::begin(),</span> <span class="pre">baseMap::end());</span> }</tt></p>
+</div>
+
+  </div><!-- /.entry-content -->
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2014-09-21T11:20:00">
+      Sun 21 September 2014
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="/dfshan_blog/author/danfeng-shan.html">Danfeng Shan</a>
+    </address> in <a href="/dfshan_blog/category/experience.html">eXperience</a> Tagged <a href="/dfshan_blog/tag/opensuse.html">openSUSE </a><a href="/dfshan_blog/tag/linux.html">Linux </a>  </footer><!-- /.post-info -->
+</section>
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="/dfshan_blog/None">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="/dfshan_blog">Danfeng Shan</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>
