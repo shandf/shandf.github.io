@@ -27,6 +27,42 @@
 <embed><script type="text/javascript" src="//rd.revolvermaps.com/0/0/6.js?i=35qwtxu8jzj&amp;m=7&amp;s=320&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script></embed> </div><!-- entry-content -->
         </article>
         <article class="hentry">
+                <header> <h2 class="entry-title"><a href="./shi-yong-linux-da-jian-ipv6-lu-you-qi.html" rel="bookmark" title="Permalink to 使用 Linux 搭建 ipv6 路由器">使用 Linux 搭建 ipv6 路由器</a></h2> </header>
+                <div class="entry-content"> <div class="section" id="id1">
+<h2>系统配置</h2>
+<blockquote>
+<ul class="simple">
+<li>系统: Ubuntu 11.04</li>
+<li>内核版本: 3.13.0-35</li>
+<li>网卡：eth0 连接广域网，eth1 连接内网</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="id2">
+<h2>搭建步骤</h2>
+<div class="section" id="ip6tables">
+<h3>安装 <tt class="docutils literal">ip6tables</tt></h3>
+</div>
+<div class="section" id="id3">
+<h3>配置 <tt class="docutils literal">ip6tables</tt></h3>
+<pre class="literal-block">
+ip6tables -t nat -A POSTROUTING -o teredo -s fec0::/64 -j MASQUERADE
+ip6tables-save &gt;  /etc/ip6tables-nat
+</pre>
+<p>其中, <tt class="docutils literal">teredo</tt> 表示发送 ipv6 数据包目的 interface</p>
+</div>
+<div class="section" id="radvd">
+<h3>安装 <tt class="docutils literal">radvd</tt></h3>
+<pre class="literal-block">
+sudo apt-get install radvd
+</pre>
+</div>
+<div class="section" id="id4">
+<h3>配置 <tt class="docutils literal">radvd</tt></h3>
+<pre class="literal-block">
+interface eth1 ...</pre></div></div> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
                 <header> <h2 class="entry-title"><a href="./opensuse-xia-an-zhuang-ns-2.html" rel="bookmark" title="Permalink to openSUSE 下安装 ns-2">openSUSE 下安装 ns-2</a></h2> </header>
                 <div class="entry-content"> <div class="section" id="id1">
 <h2>需要安装的库</h2>
@@ -78,27 +114,6 @@ delivery.acm.org
 googleapis.com
 </pre>
  </div><!-- entry-content -->
-        </article>
-        <article class="hentry">
-                <header> <h2 class="entry-title"><a href="./linuxkde-xia-zi-ti-de-she-zhi.html" rel="bookmark" title="Permalink to Linux(KDE) 下字体的设置">Linux(KDE) 下字体的设置</a></h2> </header>
-                <div class="entry-content"> <p><strong>Sans-serif=无衬线体=黑体</strong>：并不是具体一款字体，而是一类字体，选择它其实等于选择这类字体中优先级最高的那款字体。</p>
-<p><strong>Serif=衬线体=白体</strong>：同上</p>
-<p><strong>Monospace=等宽字体</strong>，意思是字符宽度相同：同上</p>
-<p><strong>点阵字体=位图字体</strong></p>
-<p>无衬线体更适合电脑屏幕阅读，衬线体适合打印。因为衬线可以使得人视线平齐于一行。也就是说不会读破行。</p>
-<p>中文显示时有不同的方式，一方面因为中文本身拥有的横和同高度就可以导致这种平齐。行距对中文更重要。</p>
-<div class="section" id="id1">
-<h2>修改字体的优先级：</h2>
-<pre class="literal-block">
-/etc/fonts/fonts.conf #系统配置文件，需要root权限才能操作，对需要输入root密码的程序有效
-~/.config/fontconfig/fonts.conf #用户配置文件，随便怎么搞，只对当前用户运行的程序有效
-</pre>
-</div>
-<div class="section" id="id2">
-<h2>字体安装：</h2>
-<pre class="literal-block">
-sudo mkdir -p /usr/share/fonts/win # 新建文件夹
-sudo cp Yahei ...</pre></div> </div><!-- entry-content -->
         </article>
 <div class="pager">
       <ul>

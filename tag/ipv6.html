@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Articles in ipv6 tag - Danfeng Shan</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="./theme/static/css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href=".">Home</a></li>
+                    <li class="active"active><a href="./archives.html">Archives</a></li>
+                </ul>
+                <h3 class="text-muted"><a href=".">Danfeng Shan</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="content">
+<h2>Articles with the ipv6 tag</h2>
+
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="./shi-yong-linux-da-jian-ipv6-lu-you-qi.html" rel="bookmark" title="Permalink to 使用 Linux 搭建 ipv6 路由器">使用 Linux 搭建 ipv6 路由器</a></h2> </header>
+                <div class="entry-content"> <div class="section" id="id1">
+<h2>系统配置</h2>
+<blockquote>
+<ul class="simple">
+<li>系统: Ubuntu 11.04</li>
+<li>内核版本: 3.13.0-35</li>
+<li>网卡：eth0 连接广域网，eth1 连接内网</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="id2">
+<h2>搭建步骤</h2>
+<div class="section" id="ip6tables">
+<h3>安装 <tt class="docutils literal">ip6tables</tt></h3>
+</div>
+<div class="section" id="id3">
+<h3>配置 <tt class="docutils literal">ip6tables</tt></h3>
+<pre class="literal-block">
+ip6tables -t nat -A POSTROUTING -o teredo -s fec0::/64 -j MASQUERADE
+ip6tables-save &gt;  /etc/ip6tables-nat
+</pre>
+<p>其中, <tt class="docutils literal">teredo</tt> 表示发送 ipv6 数据包目的 interface</p>
+</div>
+<div class="section" id="radvd">
+<h3>安装 <tt class="docutils literal">radvd</tt></h3>
+<pre class="literal-block">
+sudo apt-get install radvd
+</pre>
+</div>
+<div class="section" id="id4">
+<h3>配置 <tt class="docutils literal">radvd</tt></h3>
+<pre class="literal-block">
+interface eth1 ...</pre></div></div> </div><!-- entry-content -->
+        </article>
+<div class="pager">
+      <ul>
+                        <li class="previous disabled"><a>← Previous</a></li>
+                        <li class="next disabled"><a>Next →</a></li>
+      </ul>
+    </div>
+</section><!-- content -->
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="./None">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href=".">Danfeng Shan</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>

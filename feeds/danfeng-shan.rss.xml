@@ -1,7 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Danfeng Shan</title><link>./</link><description></description><atom:link href="./feeds/danfeng-shan.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0800</lastBuildDate><item><title>Welcome!</title><link>./welcome.html</link><description>&lt;p&gt;Welcome to my site!&lt;/p&gt;
 &lt;!-- :save_as: index.html --&gt;
-&lt;embed&gt;&lt;script type="text/javascript" src="//rd.revolvermaps.com/0/0/6.js?i=35qwtxu8jzj&amp;amp;m=7&amp;amp;s=320&amp;amp;c=e63100&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=0&amp;amp;bv=90&amp;amp;lx=-420&amp;amp;ly=420&amp;amp;hi=20&amp;amp;he=7&amp;amp;hc=a8ddff&amp;amp;rs=80" async="async"&gt;&lt;/script&gt;&lt;/embed&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Wed, 01 Jan 2020 00:00:00 +0800</pubDate><guid>tag:,2020-01-01:./welcome.html</guid></item><item><title>openSUSE 下安装 ns-2</title><link>./opensuse-xia-an-zhuang-ns-2.html</link><description>&lt;div class="section" id="id1"&gt;
+&lt;embed&gt;&lt;script type="text/javascript" src="//rd.revolvermaps.com/0/0/6.js?i=35qwtxu8jzj&amp;amp;m=7&amp;amp;s=320&amp;amp;c=e63100&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=0&amp;amp;bv=90&amp;amp;lx=-420&amp;amp;ly=420&amp;amp;hi=20&amp;amp;he=7&amp;amp;hc=a8ddff&amp;amp;rs=80" async="async"&gt;&lt;/script&gt;&lt;/embed&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Wed, 01 Jan 2020 00:00:00 +0800</pubDate><guid>tag:,2020-01-01:./welcome.html</guid></item><item><title>使用 Linux 搭建 ipv6 路由器</title><link>./shi-yong-linux-da-jian-ipv6-lu-you-qi.html</link><description>&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;系统配置&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;系统: Ubuntu 11.04&lt;/li&gt;
+&lt;li&gt;内核版本: 3.13.0-35&lt;/li&gt;
+&lt;li&gt;网卡：eth0 连接广域网，eth1 连接内网&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;搭建步骤&lt;/h2&gt;
+&lt;div class="section" id="ip6tables"&gt;
+&lt;h3&gt;安装 &lt;tt class="docutils literal"&gt;ip6tables&lt;/tt&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;配置 &lt;tt class="docutils literal"&gt;ip6tables&lt;/tt&gt;&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+ip6tables -t nat -A POSTROUTING -o teredo -s fec0::/64 -j MASQUERADE
+ip6tables-save &amp;gt;  /etc/ip6tables-nat
+&lt;/pre&gt;
+&lt;p&gt;其中, &lt;tt class="docutils literal"&gt;teredo&lt;/tt&gt; 表示发送 ipv6 数据包目的 interface&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="radvd"&gt;
+&lt;h3&gt;安装 &lt;tt class="docutils literal"&gt;radvd&lt;/tt&gt;&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+sudo apt-get install radvd
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;配置 &lt;tt class="docutils literal"&gt;radvd&lt;/tt&gt;&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+interface eth1
+{
+        AdvSendAdvert on;
+        MinRtrAdvInterval 30;
+        MaxRtrAdvInterval 100;
+        prefix fec0::/64
+        {
+                AdvOnLink on;
+                AdvAutonomous on;
+                AdvRouterAddr on;
+        };
+};
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h3&gt;启动 &lt;tt class="docutils literal"&gt;radvd&lt;/tt&gt;&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+/etc/init.d/radvd start
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ipv6"&gt;
+&lt;h3&gt;配置本机 ipv6 地址&lt;/h3&gt;
+&lt;p&gt;最好依据内网分配到的 ipv6 地址来配置。例如，内网机器分配到的 ipv6 地址为:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+fec0::52e5:49ff:fe2f:1f0d/64
+&lt;/pre&gt;
+&lt;p&gt;因此把 ipv6 地址分配为:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+ip -6 addr add fec0::52e5:49ff:fe2f:1/64 dev eth1
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Sat, 01 Nov 2014 20:28:00 +0800</pubDate><guid>tag:,2014-11-01:./shi-yong-linux-da-jian-ipv6-lu-you-qi.html</guid><category>ipv6</category><category>Linux</category></item><item><title>openSUSE 下安装 ns-2</title><link>./opensuse-xia-an-zhuang-ns-2.html</link><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;需要安装的库&lt;/h2&gt;
 &lt;pre class="literal-block"&gt;
 sudo zypper in libX11-devel xorg-x11-devel

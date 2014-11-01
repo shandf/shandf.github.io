@@ -22,6 +22,42 @@
 <h2>Articles in the Linux category</h2>
 
         <article class="hentry">
+                <header> <h2 class="entry-title"><a href="./shi-yong-linux-da-jian-ipv6-lu-you-qi.html" rel="bookmark" title="Permalink to 使用 Linux 搭建 ipv6 路由器">使用 Linux 搭建 ipv6 路由器</a></h2> </header>
+                <div class="entry-content"> <div class="section" id="id1">
+<h2>系统配置</h2>
+<blockquote>
+<ul class="simple">
+<li>系统: Ubuntu 11.04</li>
+<li>内核版本: 3.13.0-35</li>
+<li>网卡：eth0 连接广域网，eth1 连接内网</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="id2">
+<h2>搭建步骤</h2>
+<div class="section" id="ip6tables">
+<h3>安装 <tt class="docutils literal">ip6tables</tt></h3>
+</div>
+<div class="section" id="id3">
+<h3>配置 <tt class="docutils literal">ip6tables</tt></h3>
+<pre class="literal-block">
+ip6tables -t nat -A POSTROUTING -o teredo -s fec0::/64 -j MASQUERADE
+ip6tables-save &gt;  /etc/ip6tables-nat
+</pre>
+<p>其中, <tt class="docutils literal">teredo</tt> 表示发送 ipv6 数据包目的 interface</p>
+</div>
+<div class="section" id="radvd">
+<h3>安装 <tt class="docutils literal">radvd</tt></h3>
+<pre class="literal-block">
+sudo apt-get install radvd
+</pre>
+</div>
+<div class="section" id="id4">
+<h3>配置 <tt class="docutils literal">radvd</tt></h3>
+<pre class="literal-block">
+interface eth1 ...</pre></div></div> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
                 <header> <h2 class="entry-title"><a href="./linuxkde-xia-zi-ti-de-she-zhi.html" rel="bookmark" title="Permalink to Linux(KDE) 下字体的设置">Linux(KDE) 下字体的设置</a></h2> </header>
                 <div class="entry-content"> <p><strong>Sans-serif=无衬线体=黑体</strong>：并不是具体一款字体，而是一类字体，选择它其实等于选择这类字体中优先级最高的那款字体。</p>
 <p><strong>Serif=衬线体=白体</strong>：同上</p>

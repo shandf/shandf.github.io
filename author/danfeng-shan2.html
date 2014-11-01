@@ -22,6 +22,27 @@
 <h2>Articles by Danfeng Shan</h2>
 
         <article class="hentry">
+                <header> <h2 class="entry-title"><a href="./linuxkde-xia-zi-ti-de-she-zhi.html" rel="bookmark" title="Permalink to Linux(KDE) 下字体的设置">Linux(KDE) 下字体的设置</a></h2> </header>
+                <div class="entry-content"> <p><strong>Sans-serif=无衬线体=黑体</strong>：并不是具体一款字体，而是一类字体，选择它其实等于选择这类字体中优先级最高的那款字体。</p>
+<p><strong>Serif=衬线体=白体</strong>：同上</p>
+<p><strong>Monospace=等宽字体</strong>，意思是字符宽度相同：同上</p>
+<p><strong>点阵字体=位图字体</strong></p>
+<p>无衬线体更适合电脑屏幕阅读，衬线体适合打印。因为衬线可以使得人视线平齐于一行。也就是说不会读破行。</p>
+<p>中文显示时有不同的方式，一方面因为中文本身拥有的横和同高度就可以导致这种平齐。行距对中文更重要。</p>
+<div class="section" id="id1">
+<h2>修改字体的优先级：</h2>
+<pre class="literal-block">
+/etc/fonts/fonts.conf #系统配置文件，需要root权限才能操作，对需要输入root密码的程序有效
+~/.config/fontconfig/fonts.conf #用户配置文件，随便怎么搞，只对当前用户运行的程序有效
+</pre>
+</div>
+<div class="section" id="id2">
+<h2>字体安装：</h2>
+<pre class="literal-block">
+sudo mkdir -p /usr/share/fonts/win # 新建文件夹
+sudo cp Yahei ...</pre></div> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
                 <header> <h2 class="entry-title"><a href="./opensuse-an-zhuang-virtualbox-xu-ni-ji.html" rel="bookmark" title="Permalink to openSUSE 安装 VirtualBox 虚拟机">openSUSE 安装 VirtualBox 虚拟机</a></h2> </header>
                 <div class="entry-content"> <p>使用 <tt class="docutils literal">sudo zypper in virtualbox</tt> 之后出现问题，提示运行命令 <tt class="docutils literal">/etc/init.d/vboxdrv setup</tt> 安装内核模块，可是输入命令之后产生如下输出:</p>
 <pre class="literal-block">
