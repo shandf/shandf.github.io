@@ -13,6 +13,16 @@
 &lt;/div&gt;
 &lt;div class="section" id="id2"&gt;
 &lt;h2&gt;搭建步骤&lt;/h2&gt;
+&lt;div class="section" id="ipv6"&gt;
+&lt;h3&gt;接入 ipv6 网络&lt;/h3&gt;
+&lt;p&gt;清华大学使用 ISATAP 连接 ipv6 的方法（用自己的 IP 地址替换 &lt;tt class="docutils literal"&gt;$local_ip&lt;/tt&gt;, 参见 &lt;a class="reference external" href="http://blog.fangjian.me/posts/2011/04/05/connect-tsinghua-ipv6-via-isatap-on-linux-and-windows/"&gt;http://blog.fangjian.me/posts/2011/04/05/connect-tsinghua-ipv6-via-isatap-on-linux-and-windows/&lt;/a&gt;）:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo ip tunnel add sit1 mode sit remote 59.66.4.50 local $local_ip
+sudo ifconfig sit1 up
+sudo ifconfig sit1 add 2001:da8:200:900e:0:5efe:$local_ip/64
+sudo ip route add ::/0 via 2001:da8:200:900e::1 metric 1
+&lt;/pre&gt;
+&lt;/div&gt;
 &lt;div class="section" id="ip6tables"&gt;
 &lt;h3&gt;安装 &lt;tt class="docutils literal"&gt;ip6tables&lt;/tt&gt;&lt;/h3&gt;
 &lt;/div&gt;
@@ -53,7 +63,7 @@ interface eth1
 /etc/init.d/radvd start
 &lt;/pre&gt;
 &lt;/div&gt;
-&lt;div class="section" id="ipv6"&gt;
+&lt;div class="section" id="id6"&gt;
 &lt;h3&gt;配置本机 ipv6 地址&lt;/h3&gt;
 &lt;p&gt;最好依据内网分配到的 ipv6 地址来配置。例如，内网机器分配到的 ipv6 地址为:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
