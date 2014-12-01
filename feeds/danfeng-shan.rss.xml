@@ -126,6 +126,15 @@ delivery.acm.org
 &lt;pre class="literal-block"&gt;
 googleapis.com
 &lt;/pre&gt;
+&lt;p&gt;&amp;quot;搞鬼&amp;quot; 的网站不断增加中...:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+optimizely.com
+addthis.com
+typekit.net
+typekit.com
+wwdhz.com
+gravatar.com
+&lt;/pre&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Sun, 21 Sep 2014 11:20:00 +0800</pubDate><guid>tag:,2014-09-21:./additional-list.html</guid></item><item><title>Linux(KDE) 下字体的设置</title><link>./linuxkde-xia-zi-ti-de-she-zhi.html</link><description>&lt;p&gt;&lt;strong&gt;Sans-serif=无衬线体=黑体&lt;/strong&gt;：并不是具体一款字体，而是一类字体，选择它其实等于选择这类字体中优先级最高的那款字体。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Serif=衬线体=白体&lt;/strong&gt;：同上&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Monospace=等宽字体&lt;/strong&gt;，意思是字符宽度相同：同上&lt;/p&gt;
