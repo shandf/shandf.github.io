@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Danfeng Shan</title><link>./</link><description></description><atom:link href="./feeds/danfeng-shan.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0800</lastBuildDate><item><title>Welcome!</title><link>./welcome.html</link><description>&lt;p&gt;Welcome to my site!&lt;/p&gt;
 &lt;!-- :save_as: index.html --&gt;
-&lt;embed&gt;&lt;script type="text/javascript" src="//rd.revolvermaps.com/0/0/6.js?i=35qwtxu8jzj&amp;amp;m=7&amp;amp;s=320&amp;amp;c=e63100&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=0&amp;amp;bv=90&amp;amp;lx=-420&amp;amp;ly=420&amp;amp;hi=20&amp;amp;he=7&amp;amp;hc=a8ddff&amp;amp;rs=80" async="async"&gt;&lt;/script&gt;&lt;/embed&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Wed, 01 Jan 2020 00:00:00 +0800</pubDate><guid>tag:,2020-01-01:./welcome.html</guid></item><item><title>使用 Linux 搭建 ipv6 路由器</title><link>./shi-yong-linux-da-jian-ipv6-lu-you-qi.html</link><description>&lt;div class="section" id="id1"&gt;
+&lt;embed&gt;&lt;script type="text/javascript" src="//rd.revolvermaps.com/0/0/6.js?i=35qwtxu8jzj&amp;amp;m=7&amp;amp;s=320&amp;amp;c=e63100&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=0&amp;amp;bv=90&amp;amp;lx=-420&amp;amp;ly=420&amp;amp;hi=20&amp;amp;he=7&amp;amp;hc=a8ddff&amp;amp;rs=80" async="async"&gt;&lt;/script&gt;&lt;/embed&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Wed, 01 Jan 2020 00:00:00 +0800</pubDate><guid>tag:,2020-01-01:./welcome.html</guid></item><item><title>Enable Userdir (public_html) in Ubuntu 12.04</title><link>./enable-userdir-public_html-in-ubuntu-1204.html</link><description>&lt;p&gt;Firstly, enable module &lt;cite&gt;userdir&lt;/cite&gt;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo a2enmod userdir
+&lt;/pre&gt;
+&lt;p&gt;Then, change apache config file &lt;cite&gt;/etc/apache2/mods-enabled/userdir.conf&lt;/cite&gt;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# line 6-7
+AllowOverride All
+Options ExecCGI
+&lt;/pre&gt;
+&lt;p&gt;Finally, change the apache config file &lt;cite&gt;/etc/apache2/mods-enabled/php5.conf&lt;/cite&gt;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# line 23: comment
+# /etc/apache2/mods-enabled/php5.conf
+&lt;/pre&gt;
+&lt;p&gt;Restart apache server:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo service apache2 restart
+&lt;/pre&gt;
+&lt;p&gt;It works for &lt;cite&gt;Apache/2.4.10 (Ubuntu)&lt;/cite&gt; in Ubuntu 12.04&lt;/p&gt;
+&lt;div class="section" id="references"&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;table class="docutils footnote" frame="void" id="ref" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;[1]&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="http://www.server-world.info/en/note?os=Ubuntu_14.04&amp;amp;p=httpd&amp;amp;f=5"&gt;http://www.server-world.info/en/note?os=Ubuntu_14.04&amp;amp;p=httpd&amp;amp;f=5&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Tue, 16 Dec 2014 10:10:00 +0800</pubDate><guid>tag:,2014-12-16:./enable-userdir-public_html-in-ubuntu-1204.html</guid><category>apache2</category><category>Linux</category></item><item><title>使用 Linux 搭建 ipv6 路由器</title><link>./shi-yong-linux-da-jian-ipv6-lu-you-qi.html</link><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;系统配置&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;ul class="simple"&gt;
@@ -116,7 +145,7 @@ inkstate/ls.h:137:20: error: ‘erase’ was not declared in this scope, and no 
 重启
 -----&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Tue, 23 Sep 2014 11:06:00 +0800</pubDate><guid>tag:,2014-09-23:./windows-xia-jiao-huan-caps-jian-yu-ctrl-jian.html</guid><category>Windows</category></item><item><title>Additional List</title><link>./additional-list.html</link><description>&lt;p&gt;我说最近下论文怎么变得这么慢...........................了，原来是这几个网址 &amp;quot;搞的鬼&amp;quot;:&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Danfeng Shan</dc:creator><pubDate>Tue, 23 Sep 2014 11:06:00 +0800</pubDate><guid>tag:,2014-09-23:./windows-xia-jiao-huan-caps-jian-yu-ctrl-jian.html</guid><category>Windows</category></item><item><title>Additional List</title><link>./additional-list.html</link><description>&lt;p&gt;&lt;span class="strike"&gt;我说最近下论文怎么变得这么慢...........................了，原来是这几个网址 &amp;quot;搞的鬼&amp;quot;&lt;/span&gt;:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 staticieeexplore.ieee.org
 portalparts.acm.org

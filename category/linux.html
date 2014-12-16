@@ -22,6 +22,29 @@
 <h2>Articles in the Linux category</h2>
 
         <article class="hentry">
+                <header> <h2 class="entry-title"><a href="./enable-userdir-public_html-in-ubuntu-1204.html" rel="bookmark" title="Permalink to Enable Userdir (public_html) in Ubuntu 12.04">Enable Userdir (public_html) in Ubuntu 12.04</a></h2> </header>
+                <div class="entry-content"> <p>Firstly, enable module <cite>userdir</cite>:</p>
+<pre class="literal-block">
+sudo a2enmod userdir
+</pre>
+<p>Then, change apache config file <cite>/etc/apache2/mods-enabled/userdir.conf</cite>:</p>
+<pre class="literal-block">
+# line 6-7
+AllowOverride All
+Options ExecCGI
+</pre>
+<p>Finally, change the apache config file <cite>/etc/apache2/mods-enabled/php5.conf</cite>:</p>
+<pre class="literal-block">
+# line 23: comment
+# /etc/apache2/mods-enabled/php5.conf
+</pre>
+<p>Restart apache server:</p>
+<pre class="literal-block">
+sudo service apache2 restart
+</pre>
+<p>It ...</p> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
                 <header> <h2 class="entry-title"><a href="./shi-yong-linux-da-jian-ipv6-lu-you-qi.html" rel="bookmark" title="Permalink to 使用 Linux 搭建 ipv6 路由器">使用 Linux 搭建 ipv6 路由器</a></h2> </header>
                 <div class="entry-content"> <div class="section" id="id1">
 <h2>系统配置</h2>
@@ -89,29 +112,10 @@ sudo zypper in texlive
 如果是通过 texlive 提供的安装盘安装的，则该文件夹的位置为 <tt class="docutils literal"><span class="pre">/usr/local/texlive/2014/texmf-dist</span></tt></p>
 <p>然后，进入目录 <tt class="docutils literal">/usr/share/texmf/tex/latex/ctex/fontset/</tt> 并创建文件 ...</p></div> </div><!-- entry-content -->
         </article>
-        <article class="hentry">
-                <header> <h2 class="entry-title"><a href="./ru-he-an-zhuang-fcitx.html" rel="bookmark" title="Permalink to 如何安装 fcitx">如何安装 fcitx</a></h2> </header>
-                <div class="entry-content"> <p>以ubuntu为例，说明安装企鹅输入法的步骤
-首先，要先卸载 ibus:</p>
-<pre class="literal-block">
-sudo apt-get remove ibus
-</pre>
-<p>然后，通过 &quot;apt-get&quot; 命令，安装企鹅输入法以及谷歌拼音:</p>
-<pre class="literal-block">
-sudo apt-get install fcitx fcitx-googlepinyin
-</pre>
-<p>安装完之后，在终端下可能还不能切换，因此，要修改终端的 .bashrc 文件，向其添加如下内容:</p>
-<pre class="literal-block">
-export GTK_IM_MODULE=xim
-export QT_IM_MODULE=xim
-export XMODIFIERS=&quot;&#64;im=fcitx&quot;
-</pre>
- </div><!-- entry-content -->
-        </article>
 <div class="pager">
       <ul>
                         <li class="previous disabled"><a>← Previous</a></li>
-                        <li class="next disabled"><a>Next →</a></li>
+						<li class="next"><a href="./category/linux2.html">Next →</a></li>
       </ul>
     </div>
 </section><!-- content -->

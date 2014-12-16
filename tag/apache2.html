@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Additional List - Danfeng Shan</title>
+        <title> Articles in apache2 tag - Danfeng Shan</title>
         <meta charset="utf-8" />
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
         <link href="./theme/static/css/style.css" rel="stylesheet" />
@@ -13,50 +13,44 @@
             <div class="header">
                 <ul class="nav nav-pills pull-right">
                     <li class=""><a href=".">Home</a></li>
-                    <li><a href="./archives.html">Archives</a></li>
+                    <li class="active"active><a href="./archives.html">Archives</a></li>
                 </ul>
                 <h3 class="text-muted"><a href=".">Danfeng Shan</a></h3>
 				<h2 class="text-muted"></h2>
              </div>
-<section id="content" class="article content">
-  <header>
-    <h2 class="entry-title">
-      <a href="./additional-list.html" rel="bookmark"
-         title="Permalink to Additional List">Additional List</a></h2>
- 
-  </header>
-  
-     
-  <div class="entry-content">
-    <p><span class="strike">我说最近下论文怎么变得这么慢...........................了，原来是这几个网址 &quot;搞的鬼&quot;</span>:</p>
-<pre class="literal-block">
-staticieeexplore.ieee.org
-portalparts.acm.org
-delivery.acm.org
-</pre>
-<p>另外，经常出现个人主页打开很慢的情形，这是由这个网址 &quot;搞的鬼&quot;:</p>
-<pre class="literal-block">
-googleapis.com
-</pre>
-<p>&quot;搞鬼&quot; 的网站不断增加中...:</p>
-<pre class="literal-block">
-optimizely.com
-addthis.com
-typekit.net
-typekit.com
-wwdhz.com
-gravatar.com
-</pre>
+<section id="content" class="content">
+<h2>Articles with the apache2 tag</h2>
 
-  </div><!-- /.entry-content -->
-   <footer class="post-info text-muted">
-    Posted on <abbr class="published" title="2014-09-21T11:20:00">
-      Sun 21 September 2014
-    </abbr>
-    <address class="vcard author">
-      by <a class="url fn" href="./author/danfeng-shan.html">Danfeng Shan</a>
-    </address> in <a href="./category/experience.html">eXperience</a> Tagged   </footer><!-- /.post-info -->
-</section>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="./enable-userdir-public_html-in-ubuntu-1204.html" rel="bookmark" title="Permalink to Enable Userdir (public_html) in Ubuntu 12.04">Enable Userdir (public_html) in Ubuntu 12.04</a></h2> </header>
+                <div class="entry-content"> <p>Firstly, enable module <cite>userdir</cite>:</p>
+<pre class="literal-block">
+sudo a2enmod userdir
+</pre>
+<p>Then, change apache config file <cite>/etc/apache2/mods-enabled/userdir.conf</cite>:</p>
+<pre class="literal-block">
+# line 6-7
+AllowOverride All
+Options ExecCGI
+</pre>
+<p>Finally, change the apache config file <cite>/etc/apache2/mods-enabled/php5.conf</cite>:</p>
+<pre class="literal-block">
+# line 23: comment
+# /etc/apache2/mods-enabled/php5.conf
+</pre>
+<p>Restart apache server:</p>
+<pre class="literal-block">
+sudo service apache2 restart
+</pre>
+<p>It ...</p> </div><!-- entry-content -->
+        </article>
+<div class="pager">
+      <ul>
+                        <li class="previous disabled"><a>← Previous</a></li>
+                        <li class="next disabled"><a>Next →</a></li>
+      </ul>
+    </div>
+</section><!-- content -->
             <footer id="contentinfo" class="footer">
                     <nav class="pull-right bottom-nav">
                         <a href="./None">RSS</a>

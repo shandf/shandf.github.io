@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Articles by Danfeng Shan - Danfeng Shan</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="./theme/static/css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href=".">Home</a></li>
+                    <li class="active"><a href="./archives.html">Archives</a></li>
+                </ul>
+                <h3 class="text-muted"><a href=".">Danfeng Shan</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="content">
+<h2>Articles by Danfeng Shan</h2>
+
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="./how-to-change-the-web-port-of-gitlab.html" rel="bookmark" title="Permalink to How to Change the Web Port of GitLab">How to Change the Web Port of GitLab</a></h2> </header>
+                <div class="entry-content"> <div class="section" id="step-1-gitlab-shell">
+<h2>Step 1: GitLab Shell</h2>
+<p>Change the GitLab Shell config file: <cite>/home/git/gitlab-shell/config.yml</cite>:</p>
+<pre class="literal-block">
+gitlab_url: &quot;http://***.***.***.***:83/&quot;
+</pre>
+</div>
+<div class="section" id="step-2-gitlab">
+<h2>Step 2: GitLab</h2>
+<p>Change the GitLab config file: <cite>/home/git/gitlab/config/gitlab.yml</cite>:</p>
+<pre class="literal-block">
+host: ***.***.***.***
+port: 83
+</pre>
+</div>
+<div class="section" id="step-3-ngnix">
+<h2>Step 3: ngnix</h2>
+<p>Change the nginx config file: ` /etc/nginx/sites-available/gitlab`:</p>
+<pre class="literal-block">
+listen *:83 default_server;
+</pre>
+</div>
+ </div><!-- entry-content -->
+        </article>
+<div class="pager">
+      <ul>
+						<li class="previous"><a href="./author/danfeng-shan2.html">← Previous</a></li>
+                        <li class="next disabled"><a>Next →</a></li>
+      </ul>
+    </div>
+</section><!-- content -->
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="./None">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href=".">Danfeng Shan</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>

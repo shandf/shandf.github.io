@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Danfeng Shan</title><link href="./" rel="alternate"></link><link href="./feeds/danfeng-shan.atom.xml" rel="self"></link><id>./</id><updated>2020-01-01T00:00:00+08:00</updated><entry><title>Welcome!</title><link href="./welcome.html" rel="alternate"></link><updated>2020-01-01T00:00:00+08:00</updated><author><name>Danfeng Shan</name></author><id>tag:,2020-01-01:./welcome.html</id><summary type="html">&lt;p&gt;Welcome to my site!&lt;/p&gt;
 &lt;!-- :save_as: index.html --&gt;
-&lt;embed&gt;&lt;script type="text/javascript" src="//rd.revolvermaps.com/0/0/6.js?i=35qwtxu8jzj&amp;amp;m=7&amp;amp;s=320&amp;amp;c=e63100&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=0&amp;amp;bv=90&amp;amp;lx=-420&amp;amp;ly=420&amp;amp;hi=20&amp;amp;he=7&amp;amp;hc=a8ddff&amp;amp;rs=80" async="async"&gt;&lt;/script&gt;&lt;/embed&gt;</summary></entry><entry><title>使用 Linux 搭建 ipv6 路由器</title><link href="./shi-yong-linux-da-jian-ipv6-lu-you-qi.html" rel="alternate"></link><updated>2014-11-01T20:28:00+08:00</updated><author><name>Danfeng Shan</name></author><id>tag:,2014-11-01:./shi-yong-linux-da-jian-ipv6-lu-you-qi.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;embed&gt;&lt;script type="text/javascript" src="//rd.revolvermaps.com/0/0/6.js?i=35qwtxu8jzj&amp;amp;m=7&amp;amp;s=320&amp;amp;c=e63100&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=0&amp;amp;bv=90&amp;amp;lx=-420&amp;amp;ly=420&amp;amp;hi=20&amp;amp;he=7&amp;amp;hc=a8ddff&amp;amp;rs=80" async="async"&gt;&lt;/script&gt;&lt;/embed&gt;</summary></entry><entry><title>Enable Userdir (public_html) in Ubuntu 12.04</title><link href="./enable-userdir-public_html-in-ubuntu-1204.html" rel="alternate"></link><updated>2014-12-16T10:10:00+08:00</updated><author><name>Danfeng Shan</name></author><id>tag:,2014-12-16:./enable-userdir-public_html-in-ubuntu-1204.html</id><summary type="html">&lt;p&gt;Firstly, enable module &lt;cite&gt;userdir&lt;/cite&gt;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo a2enmod userdir
+&lt;/pre&gt;
+&lt;p&gt;Then, change apache config file &lt;cite&gt;/etc/apache2/mods-enabled/userdir.conf&lt;/cite&gt;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# line 6-7
+AllowOverride All
+Options ExecCGI
+&lt;/pre&gt;
+&lt;p&gt;Finally, change the apache config file &lt;cite&gt;/etc/apache2/mods-enabled/php5.conf&lt;/cite&gt;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# line 23: comment
+# /etc/apache2/mods-enabled/php5.conf
+&lt;/pre&gt;
+&lt;p&gt;Restart apache server:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo service apache2 restart
+&lt;/pre&gt;
+&lt;p&gt;It works for &lt;cite&gt;Apache/2.4.10 (Ubuntu)&lt;/cite&gt; in Ubuntu 12.04&lt;/p&gt;
+&lt;div class="section" id="references"&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;table class="docutils footnote" frame="void" id="ref" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;[1]&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="http://www.server-world.info/en/note?os=Ubuntu_14.04&amp;amp;p=httpd&amp;amp;f=5"&gt;http://www.server-world.info/en/note?os=Ubuntu_14.04&amp;amp;p=httpd&amp;amp;f=5&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</summary><category term="apache2"></category><category term="Linux"></category></entry><entry><title>使用 Linux 搭建 ipv6 路由器</title><link href="./shi-yong-linux-da-jian-ipv6-lu-you-qi.html" rel="alternate"></link><updated>2014-11-01T20:28:00+08:00</updated><author><name>Danfeng Shan</name></author><id>tag:,2014-11-01:./shi-yong-linux-da-jian-ipv6-lu-you-qi.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;系统配置&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;ul class="simple"&gt;
@@ -116,7 +145,7 @@ inkstate/ls.h:137:20: error: ‘erase’ was not declared in this scope, and no 
 重启
 -----&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="Windows"></category></entry><entry><title>Additional List</title><link href="./additional-list.html" rel="alternate"></link><updated>2014-09-21T11:20:00+08:00</updated><author><name>Danfeng Shan</name></author><id>tag:,2014-09-21:./additional-list.html</id><summary type="html">&lt;p&gt;我说最近下论文怎么变得这么慢...........................了，原来是这几个网址 &amp;quot;搞的鬼&amp;quot;:&lt;/p&gt;
+</summary><category term="Windows"></category></entry><entry><title>Additional List</title><link href="./additional-list.html" rel="alternate"></link><updated>2014-09-21T11:20:00+08:00</updated><author><name>Danfeng Shan</name></author><id>tag:,2014-09-21:./additional-list.html</id><summary type="html">&lt;p&gt;&lt;span class="strike"&gt;我说最近下论文怎么变得这么慢...........................了，原来是这几个网址 &amp;quot;搞的鬼&amp;quot;&lt;/span&gt;:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 staticieeexplore.ieee.org
 portalparts.acm.org

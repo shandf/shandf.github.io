@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Additional List - Danfeng Shan</title>
+        <title> Articles in Linux category - Danfeng Shan</title>
         <meta charset="utf-8" />
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
         <link href="./theme/static/css/style.css" rel="stylesheet" />
@@ -13,50 +13,40 @@
             <div class="header">
                 <ul class="nav nav-pills pull-right">
                     <li class=""><a href=".">Home</a></li>
-                    <li><a href="./archives.html">Archives</a></li>
+                    <li class="active"><a href="./archives.html">Archives</a></li>
                 </ul>
                 <h3 class="text-muted"><a href=".">Danfeng Shan</a></h3>
 				<h2 class="text-muted"></h2>
              </div>
-<section id="content" class="article content">
-  <header>
-    <h2 class="entry-title">
-      <a href="./additional-list.html" rel="bookmark"
-         title="Permalink to Additional List">Additional List</a></h2>
- 
-  </header>
-  
-     
-  <div class="entry-content">
-    <p><span class="strike">我说最近下论文怎么变得这么慢...........................了，原来是这几个网址 &quot;搞的鬼&quot;</span>:</p>
-<pre class="literal-block">
-staticieeexplore.ieee.org
-portalparts.acm.org
-delivery.acm.org
-</pre>
-<p>另外，经常出现个人主页打开很慢的情形，这是由这个网址 &quot;搞的鬼&quot;:</p>
-<pre class="literal-block">
-googleapis.com
-</pre>
-<p>&quot;搞鬼&quot; 的网站不断增加中...:</p>
-<pre class="literal-block">
-optimizely.com
-addthis.com
-typekit.net
-typekit.com
-wwdhz.com
-gravatar.com
-</pre>
+<section id="content" class="content">
+<h2>Articles in the Linux category</h2>
 
-  </div><!-- /.entry-content -->
-   <footer class="post-info text-muted">
-    Posted on <abbr class="published" title="2014-09-21T11:20:00">
-      Sun 21 September 2014
-    </abbr>
-    <address class="vcard author">
-      by <a class="url fn" href="./author/danfeng-shan.html">Danfeng Shan</a>
-    </address> in <a href="./category/experience.html">eXperience</a> Tagged   </footer><!-- /.post-info -->
-</section>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="./ru-he-an-zhuang-fcitx.html" rel="bookmark" title="Permalink to 如何安装 fcitx">如何安装 fcitx</a></h2> </header>
+                <div class="entry-content"> <p>以ubuntu为例，说明安装企鹅输入法的步骤
+首先，要先卸载 ibus:</p>
+<pre class="literal-block">
+sudo apt-get remove ibus
+</pre>
+<p>然后，通过 &quot;apt-get&quot; 命令，安装企鹅输入法以及谷歌拼音:</p>
+<pre class="literal-block">
+sudo apt-get install fcitx fcitx-googlepinyin
+</pre>
+<p>安装完之后，在终端下可能还不能切换，因此，要修改终端的 .bashrc 文件，向其添加如下内容:</p>
+<pre class="literal-block">
+export GTK_IM_MODULE=xim
+export QT_IM_MODULE=xim
+export XMODIFIERS=&quot;&#64;im=fcitx&quot;
+</pre>
+ </div><!-- entry-content -->
+        </article>
+<div class="pager">
+      <ul>
+						<li class="previous"><a href="./category/linux.html">← Previous</a></li>
+                        <li class="next disabled"><a>Next →</a></li>
+      </ul>
+    </div>
+</section><!-- content -->
             <footer id="contentinfo" class="footer">
                     <nav class="pull-right bottom-nav">
                         <a href="./None">RSS</a>
